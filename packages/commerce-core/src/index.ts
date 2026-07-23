@@ -17,6 +17,7 @@ export { sortProducts, applyFilters, filtersActive, getFacets } from "./catalog"
 
 // Pricing helpers — read variant prices through these, never `variant.prices[…]`.
 export { variantPrice, minVariantPrice, productPrice, inStock, stockQuantity } from "./pricing";
+export type { VariantPrice } from "./pricing";
 
 // Medusa → neutral mapping + category-tree utilities.
 export * from "./medusa-map";
