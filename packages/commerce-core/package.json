@@ -1,0 +1,32 @@
+{
+  "name": "@storefront/commerce-core",
+  "version": "0.1.0",
+  "description": "Backend-neutral commerce seam (catalog, cart, orders, customer) shared across storefronts. Zero brand data — catalog and store config are injected.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@medusajs/types": "^2.17.2",
+    "@tanstack/zod-adapter": "^1.167.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "commerce-packages",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "playground"
+  ],
+  "scripts": {
+    "build": "bun run --filter '@storefront/*' build",
+    "typecheck": "bun run --filter '@storefront/*' typecheck",
+    "smoke": "bun run --cwd playground smoke"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}

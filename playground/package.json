@@ -1,0 +1,11 @@
+{
+  "name": "playground",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "smoke": "bun run smoke.ts"
+  },
+  "dependencies": {
+    "@storefront/commerce-core": "workspace:*"
+  }
+}
