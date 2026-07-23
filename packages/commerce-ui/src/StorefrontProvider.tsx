@@ -10,6 +10,16 @@
 
 import { createContext, useContext, useMemo, type ReactNode } from "react";
 import type { CommerceApi } from "@storefront/commerce-core";
+import type { StorefrontQueries } from "./queries";
+
+/** Brand-voiced UI strings used by shared components. All optional — components
+ *  fall back to neutral wording when a string isn't provided. */
+export interface StorefrontCopy {
+  /** Cart drawer empty state: heading, hint line, and browse-CTA label. */
+  cartEmptyTitle?: string;
+  cartEmptyHint?: string;
+  cartEmptyCta?: string;
+}
 
 export interface StorefrontConfig {
   /** localStorage key prefix, brand-scoped so two stores on one origin don't collide. */
@@ -26,11 +36,14 @@ export interface StorefrontConfig {
    * furniture store's own scheme, …) without forking `StoreImage`.
    */
   inlineImage?: (src?: string) => string | null;
+  /** Brand-voiced UI strings; unset entries render each component's neutral default. */
+  copy?: StorefrontCopy;
 }
 
 interface StorefrontContextValue {
   config: StorefrontConfig;
   api: CommerceApi;
+  queries: StorefrontQueries;
 }
 
 const StorefrontContext = createContext<StorefrontContextValue | null>(null);
@@ -38,13 +51,20 @@ const StorefrontContext = createContext<StorefrontContextValue | null>(null);
 export function StorefrontProvider({
   config,
   api,
+  queries,
   children,
 }: {
   config: StorefrontConfig;
   api: CommerceApi;
+  /**
+   * The app's `createStorefrontQueries(api, defaultRegionId)` result — the SAME
+   * object the app's route loaders use, so package components and loaders share
+   * cache keys and an SSR prefetch is never refetched on hydration.
+   */
+  queries: StorefrontQueries;
   children: ReactNode;
 }) {
-  const value = useMemo(() => ({ config, api }), [config, api]);
+  const value = useMemo(() => ({ config, api, queries }), [config, api, queries]);
   return <StorefrontContext.Provider value={value}>{children}</StorefrontContext.Provider>;
 }
 

@@ -7,10 +7,18 @@
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
-    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
-    "./*": { "types": "./dist/*.d.ts", "import": "./dist/*.js" }
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "import": "./dist/*.js"
+    }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "sideEffects": false,
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
@@ -21,10 +29,21 @@
     "@storefront/commerce-core": "workspace:*",
     "@storefront/ui": "workspace:*"
   },
-  "peerDependencies": { "react": ">=19", "react-dom": ">=19" },
+  "peerDependencies": {
+    "react": ">=19",
+    "react-dom": ">=19",
+    "@tanstack/react-query": ">=5",
+    "@tanstack/react-router": ">=1.170",
+    "sonner": ">=2",
+    "lucide-react": ">=0.500"
+  },
   "devDependencies": {
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "@tanstack/react-query": "^5.101.1",
+    "@tanstack/react-router": "^1.170.16",
+    "sonner": "^2.0.7",
+    "lucide-react": "^0.575.0"
   }
 }
