@@ -8,7 +8,12 @@ export {
   useStorefront,
   useOptionalStorefront,
 } from "./StorefrontProvider";
-export type { StorefrontConfig, StorefrontCopy } from "./StorefrontProvider";
+export type {
+  StorefrontConfig,
+  StorefrontCopy,
+  ColourSwatch,
+  WordmarkProps,
+} from "./StorefrontProvider";
 
 // Query options built from the injected api — the app creates ONE instance,
 // uses it in its route loaders, and passes it to StorefrontProvider.
@@ -42,6 +47,22 @@ export { CartDrawer } from "./CartDrawer";
 export { AuthShell, AuthField } from "./AuthShell";
 export { MegaMenu } from "./MegaMenu";
 export { SearchDialog, SearchTrigger } from "./SearchDialog";
+
+// Shell chrome (brand bits — wordmark, announcement, labels — come from config).
+export { Navbar } from "./Navbar";
+export { MobileNav } from "./MobileNav";
+
+// PDP info column (brand slots: highlights / purchaseNote / perks).
+export { ProductInfo, ProductChip, ProductPerk } from "./ProductInfo";
+
+// Faceted filtering (colour swatches injected via config, checkbox fallback).
+export { FilterSidebar } from "./FilterSidebar";
+export { FilterDrawer } from "./FilterDrawer";
+
+// Homepage CMS section renderers.
+export { HomepageSections, SectionHeading } from "./HomepageSections";
+export { HeroCarousel } from "./HeroCarousel";
+export { ShopByRoom } from "./ShopByRoom";
 
 // Shared hooks.
 export { useDebouncedValue } from "./use-debounced-value";

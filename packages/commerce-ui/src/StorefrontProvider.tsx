@@ -8,9 +8,17 @@
 // This is what keeps @storefront/commerce-ui brand-agnostic: no `fleurette.`, no
 // `bloom:`, no site name lives in the components — they come through this context.
 
-import { createContext, useContext, useMemo, type ReactNode } from "react";
+import { createContext, useContext, useMemo, type ComponentType, type ReactNode } from "react";
 import type { CommerceApi } from "@storefront/commerce-core";
 import type { StorefrontQueries } from "./queries";
+
+/** One colour swatch for the tag facet. `swatch` is any CSS background value —
+ *  a hex for a plain pigment, or a gradient for a "mixed" entry. */
+export interface ColourSwatch {
+  value: string;
+  label: string;
+  swatch: string;
+}
 
 /** Brand-voiced UI strings used by shared components. All optional — components
  *  fall back to neutral wording when a string isn't provided. */
@@ -19,6 +27,28 @@ export interface StorefrontCopy {
   cartEmptyTitle?: string;
   cartEmptyHint?: string;
   cartEmptyCta?: string;
+  /** Navbar announcement strip. Absent = no strip. */
+  announcement?: ReactNode;
+  /** Label for the saved/favorites entry points (navbar aria, mobile nav row). */
+  savedItemsLabel?: string;
+  /** Noun for cart items in the screen-reader count ("stem"/"stems"). */
+  cartNoun?: { singular: string; plural: string };
+  /** Heading over the collections list in the mobile nav. */
+  collectionsLabel?: string;
+  /** PDP stock line, in-stock and out-of-stock voice. */
+  stockInNote?: string;
+  stockOutNote?: string;
+  /** Homepage section eyebrows (why-choose-us, newsletter, image gallery). */
+  whyChooseUsEyebrow?: string;
+  newsletterEyebrow?: string;
+  galleryEyebrow?: string;
+  /** Secondary browse link under the hero headline. */
+  heroBrowseCta?: string;
+}
+
+export interface WordmarkProps {
+  className?: string;
+  iconClassName?: string;
 }
 
 export interface StorefrontConfig {
@@ -38,6 +68,17 @@ export interface StorefrontConfig {
   inlineImage?: (src?: string) => string | null;
   /** Brand-voiced UI strings; unset entries render each component's neutral default. */
   copy?: StorefrontCopy;
+  /**
+   * The brand's logo lockup, rendered by the navbar and mobile nav. Absent, the
+   * shared chrome falls back to `siteName` as styled text.
+   */
+  Wordmark?: ComponentType<WordmarkProps>;
+  /**
+   * Colour swatches for the tag facet in the filter sidebar. Present, the tag
+   * facet renders as a swatch grid (colour-first shopping); absent, it degrades
+   * to the same checkbox list every other facet uses.
+   */
+  colourSwatches?: ColourSwatch[];
 }
 
 interface StorefrontContextValue {
