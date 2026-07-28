@@ -51,6 +51,21 @@ Every optional config entry needs a **neutral fallback** so a store that doesn't
 it still renders sensibly (`Wordmark` → `siteName` text; `colourSwatches` absent →
 checkbox list; every `copy.*` → plain wording).
 
+## How stores consume this
+
+**Directly** — `import { ProductCard } from "@storefront/commerce-ui"`. Stores do **not** wrap
+our components in local re-export files; that layer existed during the migration and was
+removed, because a local-looking path that isn't local is exactly how someone ends up editing
+a file that does nothing.
+
+Two consequences for package work:
+
+- **The barrel is the API.** An export missing from `index.ts` is invisible to every store.
+- **Declare runtime dependencies here, not in the store.** A store declares only what its own
+  `src/` imports, what its CSS and vite config need, and our peer dependencies. Everything else
+  (Radix, cva, clsx, tailwind-merge, cmdk, vaul, embla, recharts, …) arrives transitively from
+  us. A dependency added to a store instead of here works in that store and breaks the next one.
+
 ## Packages
 
 | Package | Contains | Depends on |

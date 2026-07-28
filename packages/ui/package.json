@@ -14,7 +14,8 @@
     "./*": {
       "types": "./dist/*.d.ts",
       "import": "./dist/*.js"
-    }
+    },
+    "./package.json": "./package.json"
   },
   "files": [
     "dist"

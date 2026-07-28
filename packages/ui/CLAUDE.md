@@ -24,12 +24,16 @@ Brand-agnostic Radix primitives — 46 vendored wrappers, plus `cn()` (`utils.ts
 
 ## Adding a wrapper
 
-1. `bun add @radix-ui/react-<primitive>` in this package.
+1. `bun add @radix-ui/react-<primitive>` **in this package** — stores don't declare these,
+   they arrive transitively, so a dependency added to a store instead of here will resolve in
+   dev and break for the next store.
 2. Write `src/<name>.tsx` in the convention above.
 3. Add `export * from "./<name>";` to `src/index.ts`.
+4. `bun run build` — stores resolve `dist`, not `src`.
 
 Subpath exports are generated automatically (`@storefront/ui/<name>`), so no config change
-is needed.
+is needed. Stores import from here directly; **they do not re-export our components**, so an
+export you don't add to the barrel is effectively invisible.
 
 ## Note
 
