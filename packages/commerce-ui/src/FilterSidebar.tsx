@@ -11,7 +11,7 @@ import {
 import { RadioGroup, RadioGroupItem } from "@storefront/ui/radio-group";
 import { Slider } from "@storefront/ui/slider";
 import { formatMoney } from "@storefront/commerce-core";
-import { cn } from "@storefront/ui";
+import { cn } from "@storefront/ui/utils";
 import { Check } from "lucide-react";
 import { useStorefront, type ColourSwatch } from "./StorefrontProvider";
 

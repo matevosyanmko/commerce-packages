@@ -1,6 +1,6 @@
 import { useRegion } from "./RegionProvider";
 import { formatMoney } from "@storefront/commerce-core";
-import { cn } from "@storefront/ui";
+import { cn } from "@storefront/ui/utils";
 
 interface PriceProps {
   amount: number;

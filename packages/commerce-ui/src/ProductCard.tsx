@@ -8,7 +8,7 @@ import { useCart } from "./CartProvider";
 import { minVariantPrice, inStock } from "@storefront/commerce-core";
 import { discountPercent } from "@storefront/commerce-core";
 import { track } from "@storefront/commerce-core";
-import { cn } from "@storefront/ui";
+import { cn } from "@storefront/ui/utils";
 import { FavoriteButton } from "./FavoriteButton";
 import { Price } from "./Price";
 import { StoreImage } from "./StoreImage";
