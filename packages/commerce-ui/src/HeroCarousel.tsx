@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import type { HeroSlide } from "@storefront/commerce-core";
-import { cn } from "@storefront/ui";
+import { cn } from "@storefront/ui/utils";
 import { useStorefront } from "./StorefrontProvider";
 import { StoreImage } from "./StoreImage";
 

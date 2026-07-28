@@ -15,7 +15,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@storefront/ui/navigation-menu";
-import { cn } from "@storefront/ui";
+import { cn } from "@storefront/ui/utils";
 import { Price } from "./Price";
 import { StoreImage } from "./StoreImage";
 

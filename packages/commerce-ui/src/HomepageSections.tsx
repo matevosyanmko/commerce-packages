@@ -12,7 +12,7 @@ import { HeroCarousel } from "./HeroCarousel";
 import { ProductCard } from "./ProductCard";
 import { ShopByRoom } from "./ShopByRoom";
 import { StoreImage } from "./StoreImage";
-import { cn } from "@storefront/ui";
+import { cn } from "@storefront/ui/utils";
 import type { HomepageSection } from "@storefront/commerce-core";
 import { useStorefront } from "./StorefrontProvider";
 

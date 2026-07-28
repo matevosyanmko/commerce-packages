@@ -1,5 +1,5 @@
 import { forwardRef, useEffect, useMemo, useRef, useState } from "react";
-import { cn } from "@storefront/ui";
+import { cn } from "@storefront/ui/utils";
 import { useOptionalStorefront } from "./StorefrontProvider";
 
 export type ImageSize = "sm" | "base" | "lg";
