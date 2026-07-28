@@ -1,0 +1,134 @@
+/*
+ * The harness skin.
+ *
+ * Deliberately NOT a brand. Greys plus one cool accent, so a component that only
+ * looks right against a real store's palette stands out here. A store's own
+ * styles.css defines the same variables with its own values — this file is what
+ * that contract looks like filled in neutrally.
+ */
+
+@import "tailwindcss" source(none);
+@import "@storefront/config/theme.css";
+
+/* Tailwind's `source(none)` means classes are only generated from what's listed
+ * here. These point at SRC (not dist) to match the vite aliases in main.ts —
+ * pointed at dist, every class would be one build stale. */
+@source "../../packages/ui/src";
+@source "../../packages/commerce-ui/src";
+@source "../stories";
+@source "../src";
+
+@theme {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: ui-serif, Georgia, "Times New Roman", serif;
+}
+
+:root {
+  --radius: 12px;
+
+  --background: hsl(40 20% 98%);
+  --foreground: hsl(220 14% 16%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(220 14% 16%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(220 14% 16%);
+
+  --primary: hsl(222 32% 24%);
+  --primary-foreground: hsl(40 30% 97%);
+  --secondary: hsl(220 14% 94%);
+  --secondary-foreground: hsl(220 14% 22%);
+  --muted: hsl(220 14% 95%);
+  --muted-foreground: hsl(220 9% 46%);
+  --accent: hsl(220 14% 93%);
+  --accent-foreground: hsl(220 14% 20%);
+  --destructive: hsl(0 65% 48%);
+  --destructive-foreground: hsl(0 0% 100%);
+
+  --border: hsl(220 13% 89%);
+  --input: hsl(220 13% 89%);
+  --ring: hsl(222 32% 40%);
+
+  /* Product frame */
+  --surface: hsl(40 16% 95%);
+  --surface-foreground: hsl(220 14% 20%);
+
+  /* Signature accent — badges, counts, links. Neutral indigo, not a brand hue. */
+  --bloom: hsl(232 42% 46%);
+  --bloom-foreground: hsl(0 0% 100%);
+
+  /* Markdown / sale price */
+  --sale: hsl(348 60% 44%);
+
+  /* Supporting tints */
+  --sage: hsl(150 12% 88%);
+  --petal: hsl(232 30% 95%);
+  --pollen: hsl(45 70% 88%);
+  --pollen-foreground: hsl(38 40% 22%);
+
+  --chart-1: hsl(232 42% 46%);
+  --chart-2: hsl(190 40% 42%);
+  --chart-3: hsl(150 30% 40%);
+  --chart-4: hsl(38 55% 52%);
+  --chart-5: hsl(348 45% 52%);
+
+  --sidebar: hsl(40 18% 96%);
+  --sidebar-foreground: hsl(220 14% 20%);
+  --sidebar-primary: hsl(222 32% 24%);
+  --sidebar-primary-foreground: hsl(40 30% 97%);
+  --sidebar-accent: hsl(220 14% 92%);
+  --sidebar-accent-foreground: hsl(220 14% 20%);
+  --sidebar-border: hsl(220 13% 88%);
+  --sidebar-ring: hsl(222 32% 40%);
+}
+
+.dark {
+  --background: hsl(222 18% 11%);
+  --foreground: hsl(40 18% 94%);
+  --card: hsl(222 16% 14%);
+  --card-foreground: hsl(40 18% 94%);
+  --popover: hsl(222 16% 14%);
+  --popover-foreground: hsl(40 18% 94%);
+
+  --primary: hsl(40 24% 92%);
+  --primary-foreground: hsl(222 24% 16%);
+  --secondary: hsl(222 12% 20%);
+  --secondary-foreground: hsl(40 18% 92%);
+  --muted: hsl(222 12% 19%);
+  --muted-foreground: hsl(220 10% 64%);
+  --accent: hsl(222 12% 22%);
+  --accent-foreground: hsl(40 18% 92%);
+  --destructive: hsl(0 62% 55%);
+  --destructive-foreground: hsl(0 0% 100%);
+
+  --border: hsl(222 10% 24%);
+  --input: hsl(222 10% 26%);
+  --ring: hsl(232 40% 62%);
+
+  --surface: hsl(222 14% 17%);
+  --surface-foreground: hsl(40 18% 92%);
+
+  --bloom: hsl(232 52% 66%);
+  --bloom-foreground: hsl(222 30% 12%);
+
+  --sale: hsl(348 62% 62%);
+
+  --sage: hsl(150 8% 24%);
+  --petal: hsl(232 18% 22%);
+  --pollen: hsl(45 30% 26%);
+  --pollen-foreground: hsl(45 60% 88%);
+
+  --chart-1: hsl(232 52% 66%);
+  --chart-2: hsl(190 45% 58%);
+  --chart-3: hsl(150 35% 55%);
+  --chart-4: hsl(38 60% 62%);
+  --chart-5: hsl(348 55% 64%);
+
+  --sidebar: hsl(222 16% 13%);
+  --sidebar-foreground: hsl(40 18% 92%);
+  --sidebar-primary: hsl(40 24% 92%);
+  --sidebar-primary-foreground: hsl(222 24% 16%);
+  --sidebar-accent: hsl(222 12% 20%);
+  --sidebar-accent-foreground: hsl(40 18% 92%);
+  --sidebar-border: hsl(222 10% 22%);
+  --sidebar-ring: hsl(232 40% 62%);
+}

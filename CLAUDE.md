@@ -85,14 +85,24 @@ bun install
 bun run build       # every package to dist (tsc, with .d.ts)
 bun run typecheck
 bun run smoke       # commerce-core harness in playground/
+bun run storybook   # visual harness for ui + commerce-ui, on :6006
 ```
 
-`playground/` is a throwaway harness, not a store. `smoke.ts` drives `commerce-core`
-against a **gadgets** fixture on purpose — if a change makes the gadgets fixture
-awkward, the seam has gone flower-shaped. Keep it non-floral.
+`playground/` and `storybook/` are throwaway harnesses, not stores. Both drive a
+**gadgets** fixture on purpose — if a change makes the gadgets fixture awkward, the seam
+has gone flower-shaped. Keep them non-floral.
+
+`storybook/` renders both UI packages in a deliberately neutral skin (`src/preview.css`
+fills in the theme contract with greys and one non-brand accent). That's the point: a
+component that only looks right against a real store's palette has a leak. Stories live
+in `storybook/stories/`, **not** beside the components — same reason `smoke.ts` lives in
+`playground/`, and it keeps `*.stories.tsx` out of every published `dist`. The
+with/without pairs (`FilterSidebar`, `Navbar`, `CartDrawer`) are the only coverage the
+neutral-fallback rule has; when you add a config entry with a fallback, add its pair.
 
 **After changing a package, rebuild `dist` before testing a store against it** — stores
-resolve `dist`, not `src`, so an unbuilt change looks like "nothing happened".
+resolve `dist`, not `src`, so an unbuilt change looks like "nothing happened". Storybook
+is the exception: it aliases the packages to `src` and needs no rebuild.
 
 ## Traps that cost real debugging time
 
@@ -103,6 +113,12 @@ resolve `dist`, not `src`, so an unbuilt change looks like "nothing happened".
   `/^@storefront\//`, `/^@radix-ui\//` and the React-using UI libs, plus
   `resolve.dedupe` for react, router, query, sonner, lucide. Goes away once installed
   from a registry.
+- **Vite doesn't watch outside its own root.** `storybook/.storybook/main.ts` aliases the
+  packages to `src`, and the modules load fine — but without the
+  `storefront:watch-package-sources` plugin adding `packages/` to the watcher, editing a
+  component never triggers HMR. Tailwind *does* rescan (it watches its own `@source`
+  globs), so classes update while the markup doesn't: it looks exactly like the
+  dist-staleness problem the aliases exist to prevent. Don't remove that plugin.
 - **Tailwind silently drops package-only classes.** Stores use
   `@import "tailwindcss" source(none)`, so a class that appears *only* inside a package
   component is never generated. Every store must
