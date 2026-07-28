@@ -23,6 +23,7 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
+    "@medusajs/js-sdk": "^2.17.2",
     "@medusajs/types": "^2.17.2",
     "@tanstack/zod-adapter": "^1.167.0",
     "zod": "^3.24.2"

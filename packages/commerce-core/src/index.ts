@@ -8,9 +8,12 @@
 // Neutral domain types — the ONLY shapes the UI sees.
 export * from "./types";
 
-// Data seam: the injectable factory + its config types.
+// Data seam: two factories, one contract. A store picks the backend it runs on
+// and the UI can't tell the difference.
 export { createCommerceApi } from "./api";
 export type { CommerceApi, CommerceConfig, CommerceData, CommerceCopy, Promo } from "./api";
+export { createMedusaCommerceApi, DEFAULT_PRODUCT_FIELDS } from "./api-medusa";
+export type { MedusaCommerceConfig } from "./api-medusa";
 
 // Pure catalog operations (no config needed).
 export { sortProducts, applyFilters, filtersActive, getFacets } from "./catalog";
