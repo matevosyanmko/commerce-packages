@@ -33,7 +33,12 @@ export function ProductCard({ product, priority, index }: ProductCardProps) {
   // over the card, then settle back to the primary image on leave. The extra
   // layers are mounted lazily on the first hover so unhovered cards never load
   // (or, with a real backend, request) anything beyond image[0] — the LCP one.
-  const images = product.images.length ? product.images : [product.images[0]];
+  // No fallback entry for an imageless product: `[product.images[0]]` on an
+  // empty array is `[undefined]`, which renders an <img> with no src — the
+  // browser's broken-image icon, inside the card frame. An empty list renders
+  // no layer at all and leaves the frame showing, which is what "no image"
+  // should look like.
+  const images = product.images;
   const hasGallery = images.length > 1;
   const [activeImage, setActiveImage] = useState(0);
   const [galleryMounted, setGalleryMounted] = useState(false);
