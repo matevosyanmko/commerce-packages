@@ -1,5 +1,13 @@
 # @gucco/commerce-ui
 
+## 0.2.1
+
+### Patch Changes
+
+- Updated dependencies [[`5be58e8`](https://github.com/matevosyanmko/commerce-packages/commit/5be58e829b7f963188737656dfe70715fa1c7741)]:
+  - @gucco/ui@0.2.1
+  - @gucco/commerce-core@0.2.1
+
 ## 0.2.0
 
 ### Minor Changes
