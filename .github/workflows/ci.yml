@@ -28,12 +28,19 @@ jobs:
 
       - run: bun install --frozen-lockfile
 
-      - run: bun run typecheck
-
-      # Chains clean -> tsc -> fix-esm-extensions in each package. The fixup
-      # script exits non-zero if any relative specifier is left extensionless,
-      # so a broken emit fails here rather than at a consumer's SSR boundary.
+      # Build BEFORE typecheck. commerce-ui resolves its siblings through their
+      # `types` field, which points at dist — so on a cold checkout with no dist
+      # on disk, typecheck fails with 125 "Cannot find module '@gucco/ui/...'"
+      # errors. Locally this is invisible: dist is always left over from an
+      # earlier build.
+      #
+      # `build` chains clean -> tsc -> fix-esm-extensions in each package, in
+      # workspace dependency order. The fixup script exits non-zero if any
+      # relative specifier is left extensionless, so a broken emit fails here
+      # rather than at a consumer's SSR boundary.
       - run: bun run build
+
+      - run: bun run typecheck
 
       - run: bun run smoke
 
@@ -57,20 +64,25 @@ jobs:
           }
           "
 
+      # Both tools are pinned devDependencies, run from node_modules/.bin rather
+      # than `bunx <tool>@latest` — an unpinned fetch means a release of theirs
+      # can turn CI red without anything here changing, and the bunx cache has
+      # already proven able to land in a broken state.
       - name: publint
         run: |
           for p in commerce-core ui commerce-ui config; do
             echo "--- $p"
-            bunx --bun publint "packages/$p"
+            ./node_modules/.bin/publint "packages/$p"
           done
 
-      # Reports how types resolve under node16/node10/bundler. The "no CJS
-      # entrypoint" warning is expected and intentional — these are ESM-only.
+      # Reports how types resolve under node16/node10/bundler. Informational:
+      # the "no CJS entrypoint" finding is expected and intentional, since these
+      # packages are deliberately ESM-only — so this must not gate the build.
       - name: Are the types wrong?
         run: |
           for p in commerce-core ui commerce-ui config; do
             echo "--- $p"
-            bunx --bun @arethetypeswrong/cli --pack "packages/$p" || true
+            ./node_modules/.bin/attw --pack "packages/$p" || true
           done
 
       # Packages must never read a brand literal or an env var; see CLAUDE.md.
