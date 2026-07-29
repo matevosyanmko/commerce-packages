@@ -1,6 +1,6 @@
 {
   "name": "@gucco/commerce-ui",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Shared commerce components + providers. Brand values injected via StorefrontProvider.",
   "keywords": [
     "react",
@@ -50,8 +50,8 @@
     "pack:check": "bun pm pack --dry-run"
   },
   "dependencies": {
-    "@gucco/commerce-core": "^0.2.0",
-    "@gucco/ui": "^0.2.0"
+    "@gucco/commerce-core": "^0.2.1",
+    "@gucco/ui": "^0.2.1"
   },
   "peerDependencies": {
     "react": ">=19",
