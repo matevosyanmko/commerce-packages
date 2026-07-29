@@ -1,6 +1,6 @@
 {
   "name": "@gucco/commerce-core",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Backend-neutral commerce seam (catalog, cart, orders, customer) shared across storefronts. Zero brand data — catalog and store config are injected.",
   "keywords": [
     "commerce",
