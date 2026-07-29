@@ -26,10 +26,15 @@ jobs:
         with:
           bun-version: 1.3.14
 
+      # Deliberately NO `registry-url`. That input makes setup-node write an
+      # .npmrc containing `//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}`,
+      # and with no token set that expands to an empty credential — npm then
+      # sends it instead of performing the OIDC exchange, and the publish 404s.
+      # Without the file, npm uses the default registry and authenticates over
+      # OIDC as intended.
       - uses: actions/setup-node@v4
         with:
           node-version: 24
-          registry-url: https://registry.npmjs.org
 
       # Trusted publishing needs npm >= 11.5.1. Node 24 ships a new enough npm,
       # but pinning the floor here means a runner image change can't silently
