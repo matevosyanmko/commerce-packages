@@ -114,13 +114,24 @@ out from CI, and the trigger is merging a PR.
    the generated `.changeset/*.md` alongside the code.
 2. Merging to `main` makes the release workflow open (or update) a **Version Packages** PR
    containing the version bumps, the rewritten internal ranges, and the changelogs.
-3. Merging *that* PR publishes all four. The diff you approved is exactly what shipped.
+3. Merging *that* PR publishes **whichever packages the changeset touched**. The diff you
+   approved is exactly what shipped.
 
-**All four packages are `fixed` in `.changeset/config.json`** — they version and publish in
-lockstep, even when only one changed. They're one dependency arrow developed in one repo;
-versioning them independently buys nothing and creates a compatibility matrix to reason
-about. `updateInternalDependencies: "patch"` keeps `commerce-ui`'s ranges on its two
-siblings correct automatically — never hand-edit those.
+**The packages version independently** — `fixed` is empty in `.changeset/config.json`, so a
+change to `ui` publishes `ui` and leaves the other three where they are. Name only the
+packages you actually changed in the changeset; adding the others to be safe republishes
+byte-identical tarballs and buries the real change in empty changelog headings.
+
+The one cascade, and it's narrower than it sounds: a **minor or major** on `commerce-core`
+or `ui` also releases `commerce-ui` as a patch, because the new version falls outside its
+`^` range and that range has to be rewritten. A **patch** on a sibling cascades to nothing —
+`^0.2.1` already covers `0.2.2`, so `commerce-ui` isn't touched and isn't republished. Those
+range rewrites are generated: **never hand-edit them**, and never name `commerce-ui` in the
+changeset for a sibling's change — changesets works the dependency arrow out itself.
+
+Consequence of independence: the four versions drift, so "we're on 0.3.1" no longer
+describes the repo. A store's four `^` ranges each move on their own schedule, and
+`@gucco/config` — which nothing depends on — only moves when it genuinely changes.
 
 CI publishes over OIDC (**npm trusted publishing**), so there is no `NPM_TOKEN` secret and
 nothing to rotate. If you ever find yourself pasting a token or a 2FA code to ship a
