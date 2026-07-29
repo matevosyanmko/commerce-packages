@@ -136,10 +136,20 @@ export function getFacets(
     collectionNames,
   );
 
+  // Reduced rather than `Math.min(...prices)`: the spread passes one argument
+  // per product, and an engine's argument limit (~124k in V8) is a hard ceiling
+  // — past it this throws RangeError instead of returning a range. A catalog
+  // that large is unusual, but the failure would land in a PLP loader with a
+  // stack trace pointing at Math.min, which explains nothing.
+  const priceRange = prices.reduce(
+    (range, price) => ({ min: Math.min(range.min, price), max: Math.max(range.max, price) }),
+    { min: Infinity, max: -Infinity },
+  );
+
   return {
     price: {
-      min: prices.length ? Math.floor(Math.min(...prices)) : 0,
-      max: prices.length ? Math.ceil(Math.max(...prices)) : 0,
+      min: prices.length ? Math.floor(priceRange.min) : 0,
+      max: prices.length ? Math.ceil(priceRange.max) : 0,
     },
     options: [...optionCounts.entries()]
       .map(([name, counts]) => toFacet(name, name, counts))
