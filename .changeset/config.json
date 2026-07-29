@@ -5,9 +5,7 @@
     { "repo": "matevosyanmko/commerce-packages" }
   ],
   "commit": false,
-  "fixed": [
-    ["@gucco/commerce-core", "@gucco/ui", "@gucco/commerce-ui", "@gucco/config"]
-  ],
+  "fixed": [],
   "linked": [],
   "access": "public",
   "baseBranch": "main",
