@@ -87,6 +87,21 @@ const config: StorybookConfig = {
       ],
     };
 
+    // Radix, TanStack Router/Query and cmdk ship a "use client" directive at the
+    // top of every module. Rollup has nowhere to put it when bundling and warns
+    // once per file — 83 lines of noise that nothing here acts on, and enough to
+    // bury an actual error. Drop that one code; everything else still surfaces.
+    cfg.build = {
+      ...cfg.build,
+      rollupOptions: {
+        ...cfg.build?.rollupOptions,
+        onwarn(warning, defaultHandler) {
+          if (warning.code === "MODULE_LEVEL_DIRECTIVE") return;
+          defaultHandler(warning);
+        },
+      },
+    };
+
     return cfg;
   },
 };
