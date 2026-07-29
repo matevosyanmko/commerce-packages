@@ -48,4 +48,3 @@ export * from "./toggle";
 export * from "./tooltip";
 export * from "./use-mobile";
 export * from "./utils";
-export * from "./test-component";
