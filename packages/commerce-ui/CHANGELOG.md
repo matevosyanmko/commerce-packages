@@ -1,5 +1,19 @@
 # @gucco/commerce-ui
 
+## 0.2.0
+
+### Minor Changes
+
+- [#9](https://github.com/matevosyanmko/commerce-packages/pull/9) [`e52bf4c`](https://github.com/matevosyanmko/commerce-packages/commit/e52bf4cab108796c10e7b235814ac4147d22e753) Thanks [@matevosyanmko](https://github.com/matevosyanmko)! - Export `PriceProps`, `ProductCardProps` and `VariantPickerProps` from the barrel, so a store
+  can name the props of the components it wraps — `StoreImageProps` and `WordmarkProps` were
+  already public, these three were not.
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @gucco/commerce-core@0.2.0
+  - @gucco/ui@0.2.0
+
 ## 0.1.1
 
 ### Patch Changes
