@@ -15,6 +15,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # The changeset gate at the bottom needs a real merge base: `status
+          # --since` looks for where HEAD diverged from the base branch, and the
+          # default shallow clone has no common history for it to find — it fails
+          # with "Failed to find where HEAD diverged", which reads like a missing
+          # branch rather than a missing history. Same reason release.yml sets it.
+          fetch-depth: 0
 
       - uses: oven-sh/setup-bun@v2
         with:
@@ -100,9 +107,8 @@ jobs:
       # on npm, and exits successfully. The change just sits on main.
       #
       # `status --since` diffs the workspace against the base branch and exits
-      # non-zero when a changed package has no changeset covering it. checkout is
-      # shallow, so the base ref has to be fetched first or there is nothing to
-      # diff against.
+      # non-zero when a changed package has no changeset covering it. It needs the
+      # full history that `fetch-depth: 0` on checkout provides.
       #
       # For a PR that deliberately ships no release — docs, CI, tooling, or a
       # change confined to playground/ or storybook/ — record that intent with an
@@ -111,6 +117,4 @@ jobs:
       # the branch itself, which would make the diff meaningless.
       - name: Changeset gate
         if: github.event_name == 'pull_request'
-        run: |
-          git fetch --no-tags --depth=1 origin ${{ github.base_ref }}
-          ./node_modules/.bin/changeset status --since=origin/${{ github.base_ref }}
+        run: ./node_modules/.bin/changeset status --since=origin/${{ github.base_ref }}
