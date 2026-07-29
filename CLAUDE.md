@@ -111,7 +111,11 @@ Published to public npm as `@gucco/*`. **Nobody runs `npm publish` by hand** —
 out from CI, and the trigger is merging a PR.
 
 1. With your change, run `bun run changeset`, pick the bump, describe it in one line. Commit
-   the generated `.changeset/*.md` alongside the code.
+   the generated `.changeset/*.md` alongside the code. **Forget this and nothing ships** —
+   Release finds no changesets, tries to publish, sees every version already on npm and exits
+   green. CI's **Changeset gate** fails the PR for exactly this reason; if the PR genuinely
+   ships no release (docs, CI, tooling, `playground/`, `storybook/`), say so on the record
+   with `bunx changeset add --empty` rather than working around the gate.
 2. Merging to `main` makes the release workflow open (or update) a **Version Packages** PR
    containing the version bumps, the rewritten internal ranges, and the changelogs.
 3. Merging *that* PR publishes **whichever packages the changeset touched**. The diff you

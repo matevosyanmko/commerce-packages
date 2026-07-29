@@ -93,3 +93,24 @@ jobs:
             exit 1
           fi
           echo "no leaks"
+
+      # A PR that changes a package but ships no changeset publishes NOTHING, and
+      # says so nowhere: this workflow goes green, the merge triggers Release, and
+      # Release finds no changesets, tries to publish, finds every version already
+      # on npm, and exits successfully. The change just sits on main.
+      #
+      # `status --since` diffs the workspace against the base branch and exits
+      # non-zero when a changed package has no changeset covering it. checkout is
+      # shallow, so the base ref has to be fetched first or there is nothing to
+      # diff against.
+      #
+      # For a PR that deliberately ships no release — docs, CI, tooling, or a
+      # change confined to playground/ or storybook/ — record that intent with an
+      # empty changeset (`bunx changeset add --empty`) rather than reaching for
+      # this gate. Only fires on pull_request: on a push to main the base ref is
+      # the branch itself, which would make the diff meaningless.
+      - name: Changeset gate
+        if: github.event_name == 'pull_request'
+        run: |
+          git fetch --no-tags --depth=1 origin ${{ github.base_ref }}
+          ./node_modules/.bin/changeset status --since=origin/${{ github.base_ref }}
