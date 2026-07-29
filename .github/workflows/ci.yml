@@ -37,6 +37,12 @@ jobs:
 
       - run: bun run smoke
 
+      # Storybook resolves the packages through its own alias table rather than
+      # node_modules, so it can break in ways nothing else here catches — a
+      # scope rename that misses those aliases builds fine everywhere else and
+      # fails only at "Rollup failed to resolve import".
+      - run: bun run --cwd storybook build
+
       # The published packages must resolve under plain Node ESM, with no
       # bundler in the picture. Importing each barrel pulls in every module.
       - name: Resolve every dist module in bare Node ESM

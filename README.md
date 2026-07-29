@@ -78,7 +78,7 @@ A store wiring these packages needs three things beyond `bun add`:
 2. **The CSS variables** listed at the top of `config/css/theme.css`, in `:root`
    and `.dark`. That's the whole re-skin.
 3. **`vite.config.ts`** — while packages are consumed via `bun link`, add
-   `ssr.noExternal` for `/^@storefront\//` (plus `/^@radix-ui\//` and the other
+   `ssr.noExternal` for `/^@gucco\//` (plus `/^@radix-ui\//` and the other
    React-using UI libs) and extend `resolve.dedupe` with `@tanstack/react-router`,
    `sonner` and `lucide-react`. Symlinked packages otherwise resolve their own
    React and you get "Invalid hook call" in SSR. Unnecessary once installed from

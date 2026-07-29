@@ -66,12 +66,12 @@ const config: StorybookConfig = {
       // Subpaths are listed first: vite takes the first matching alias, so
       // `@gucco/ui/utils` must be tried before the bare `@gucco/ui`.
       alias: [
-        { find: /^@storefront\/ui\/(.*)$/, replacement: pkg("ui", "/$1") },
-        { find: /^@storefront\/ui$/, replacement: pkg("ui", "/index.ts") },
-        { find: /^@storefront\/commerce-ui\/(.*)$/, replacement: pkg("commerce-ui", "/$1") },
-        { find: /^@storefront\/commerce-ui$/, replacement: pkg("commerce-ui", "/index.ts") },
-        { find: /^@storefront\/commerce-core\/(.*)$/, replacement: pkg("commerce-core", "/$1") },
-        { find: /^@storefront\/commerce-core$/, replacement: pkg("commerce-core", "/index.ts") },
+        { find: /^@gucco\/ui\/(.*)$/, replacement: pkg("ui", "/$1") },
+        { find: /^@gucco\/ui$/, replacement: pkg("ui", "/index.ts") },
+        { find: /^@gucco\/commerce-ui\/(.*)$/, replacement: pkg("commerce-ui", "/$1") },
+        { find: /^@gucco\/commerce-ui$/, replacement: pkg("commerce-ui", "/index.ts") },
+        { find: /^@gucco\/commerce-core\/(.*)$/, replacement: pkg("commerce-core", "/$1") },
+        { find: /^@gucco\/commerce-core$/, replacement: pkg("commerce-core", "/index.ts") },
       ],
       // The dual-React trap from CLAUDE.md, in a new form: the packages are
       // symlinked workspaces, so without this they can resolve their own copy of

@@ -140,7 +140,7 @@ Releases are permanent. A bad one is fixed with `npm deprecate` plus a patch, ne
   `commerce-packages/node_modules`, so SSR gets two Reacts and every Radix component
   throws *"Invalid hook call"*. The client build hides it (it dedupes); dev SSR does
   not. Fix lives in the **store's** `vite.config.ts`: `ssr.noExternal` for
-  `/^@storefront\//`, `/^@radix-ui\//` and the React-using UI libs, plus
+  `/^@gucco\//`, `/^@radix-ui\//` and the React-using UI libs, plus
   `resolve.dedupe` for react, router, query, sonner, lucide. Goes away once installed
   from a registry.
 - **Vite doesn't watch outside its own root.** `storybook/.storybook/main.ts` aliases the
