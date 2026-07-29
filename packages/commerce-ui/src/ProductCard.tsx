@@ -13,7 +13,7 @@ import { FavoriteButton } from "./FavoriteButton";
 import { Price } from "./Price";
 import { StoreImage } from "./StoreImage";
 
-interface ProductCardProps {
+export interface ProductCardProps {
   product: Product;
   /** Above-the-fold card: load its image eagerly so it can be the LCP element. */
   priority?: boolean;

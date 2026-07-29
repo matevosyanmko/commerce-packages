@@ -33,11 +33,14 @@ export { FavoritesProvider, useFavorites } from "./FavoritesProvider";
 
 // Shared commerce components.
 export { Price } from "./Price";
+export type { PriceProps } from "./Price";
 export { Breadcrumbs } from "./Breadcrumbs";
 export type { Crumb } from "./Breadcrumbs";
 export { VariantPicker } from "./VariantPicker";
+export type { VariantPickerProps } from "./VariantPicker";
 export { ProductGrid, ProductGridSkeleton } from "./ProductGrid";
 export { ProductCard } from "./ProductCard";
+export type { ProductCardProps } from "./ProductCard";
 export { ProductGallery } from "./ProductGallery";
 export { ProductPagination, ResultRange, PAGE_SIZE } from "./ProductPagination";
 export { FavoriteButton } from "./FavoriteButton";

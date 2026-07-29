@@ -2,7 +2,7 @@ import { useRegion } from "./RegionProvider";
 import { formatMoney } from "@gucco/commerce-core";
 import { cn } from "@gucco/ui/utils";
 
-interface PriceProps {
+export interface PriceProps {
   amount: number;
   compareAt?: number;
   className?: string;
