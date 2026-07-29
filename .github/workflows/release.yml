@@ -63,7 +63,15 @@ jobs:
           # which picks up the OIDC credential from `id-token: write` above and
           # attaches a provenance attestation automatically.
           #
-          # If the first real release fails to authenticate, the fallback is to keep
-          # `version` here and replace `publish` with an explicit per-package
-          # `npm publish` step, which definitely honours OIDC.
+          # Provenance requires this repo to stay PUBLIC. npm verifies the
+          # `repository_visibility` claim in the OIDC token and rejects a private
+          # source with `E422 ... Unsupported GitHub Actions source repository
+          # visibility: "private"` — at the very last step, after a full build and
+          # after the signed statement is already in the transparency log. It reads
+          # like an npm outage; it isn't. Make the repo public again, or drop this
+          # line (publishing still works over OIDC, just without an attestation).
+          #
+          # If a release ever fails to *authenticate* — a 401/404 rather than this
+          # 422 — the fallback is to keep `version` here and replace `publish` with
+          # an explicit per-package `npm publish` step, which definitely honours OIDC.
           NPM_CONFIG_PROVENANCE: true
