@@ -3,10 +3,10 @@
 
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Info, TriangleAlert } from "lucide-react";
-import { Alert, AlertDescription, AlertTitle } from "@storefront/ui/alert";
-import { AspectRatio } from "@storefront/ui/aspect-ratio";
-import { Avatar, AvatarFallback, AvatarImage } from "@storefront/ui/avatar";
-import { Badge } from "@storefront/ui/badge";
+import { Alert, AlertDescription, AlertTitle } from "@gucco/ui/alert";
+import { AspectRatio } from "@gucco/ui/aspect-ratio";
+import { Avatar, AvatarFallback, AvatarImage } from "@gucco/ui/avatar";
+import { Badge } from "@gucco/ui/badge";
 import {
   Card,
   CardContent,
@@ -14,11 +14,11 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@storefront/ui/card";
-import { Label } from "@storefront/ui/label";
-import { Progress } from "@storefront/ui/progress";
-import { Separator } from "@storefront/ui/separator";
-import { Skeleton } from "@storefront/ui/skeleton";
+} from "@gucco/ui/card";
+import { Label } from "@gucco/ui/label";
+import { Progress } from "@gucco/ui/progress";
+import { Separator } from "@gucco/ui/separator";
+import { Skeleton } from "@gucco/ui/skeleton";
 
 // `subcomponents` gives the Docs page one prop table per component.
 //

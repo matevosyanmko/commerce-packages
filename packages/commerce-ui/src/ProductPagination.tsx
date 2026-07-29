@@ -4,9 +4,9 @@ import {
   PaginationContent,
   PaginationEllipsis,
   PaginationItem,
-} from "@storefront/ui/pagination";
-import { buttonVariants } from "@storefront/ui/button";
-import { cn } from "@storefront/ui/utils";
+} from "@gucco/ui/pagination";
+import { buttonVariants } from "@gucco/ui/button";
+import { cn } from "@gucco/ui/utils";
 
 /** Products per page. 24 divides evenly by the 2/3/4-column grids. */
 export const PAGE_SIZE = 24;

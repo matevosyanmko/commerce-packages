@@ -1,4 +1,4 @@
-// @storefront/commerce-ui — shared commerce components + providers.
+// @gucco/commerce-ui — shared commerce components + providers.
 //
 // Brand-agnostic: every per-store value (storage prefix, brand imagery, site
 // name, the api instance) is injected via StorefrontProvider, never hardcoded.

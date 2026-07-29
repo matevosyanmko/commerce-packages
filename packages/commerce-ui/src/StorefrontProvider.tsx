@@ -5,11 +5,11 @@
 // at the root with its own config and its `createCommerceApi` instance; package
 // components read them via `useStorefront()`.
 //
-// This is what keeps @storefront/commerce-ui brand-agnostic: no `fleurette.`, no
-// `bloom:`, no site name lives in the components — they come through this context.
+// This is what keeps @gucco/commerce-ui brand-agnostic: no storage prefix, no
+// image scheme, no site name lives in the components — they come through this context.
 
 import { createContext, useContext, useMemo, type ComponentType, type ReactNode } from "react";
-import type { CommerceApi } from "@storefront/commerce-core";
+import type { CommerceApi } from "@gucco/commerce-core";
 import type { StorefrontQueries } from "./queries";
 
 /** One colour swatch for the tag facet. `swatch` is any CSS background value —
@@ -62,7 +62,7 @@ export interface StorefrontConfig {
   /**
    * Resolve a brand-specific image scheme to an inline data URI, or null to fall
    * through to the normal progressive-image path. This is the seam that lets a
-   * store keep its signature imagery (Fleurette's procedural `bloom:` SVGs, a
+   * store keep its signature imagery (a florist's procedural `bloom:` SVGs, a
    * furniture store's own scheme, …) without forking `StoreImage`.
    */
   inlineImage?: (src?: string) => string | null;

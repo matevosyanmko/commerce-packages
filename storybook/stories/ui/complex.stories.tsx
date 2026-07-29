@@ -6,15 +6,15 @@ import { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { toast } from "sonner";
 import { Calculator, Calendar as CalendarIcon, Search, Settings, Smile } from "lucide-react";
-import { Button } from "@storefront/ui/button";
-import { Calendar } from "@storefront/ui/calendar";
+import { Button } from "@gucco/ui/button";
+import { Calendar } from "@gucco/ui/calendar";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@storefront/ui/carousel";
+} from "@gucco/ui/carousel";
 import {
   Command,
   CommandEmpty,
@@ -24,7 +24,7 @@ import {
   CommandList,
   CommandSeparator,
   CommandShortcut,
-} from "@storefront/ui/command";
+} from "@gucco/ui/command";
 
 // Calendar and Carousel take real options of their own; the cmdk parts forward
 // everything, so only the two roots are tabulated.

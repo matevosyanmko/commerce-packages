@@ -1,6 +1,6 @@
 import { useId } from "react";
-import type { ProductOption } from "@storefront/commerce-core";
-import { RadioGroup, RadioGroupPill } from "@storefront/ui/radio-group";
+import type { ProductOption } from "@gucco/commerce-core";
+import { RadioGroup, RadioGroupPill } from "@gucco/ui/radio-group";
 
 interface VariantPickerProps {
   option: ProductOption;

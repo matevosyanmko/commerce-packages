@@ -1,0 +1,17 @@
+{
+  "$schema": "https://unpkg.com/@changesets/config@3.0.0/schema.json",
+  "changelog": [
+    "@changesets/changelog-github",
+    { "repo": "matevosyanmko/commerce-packages" }
+  ],
+  "commit": false,
+  "fixed": [
+    ["@gucco/commerce-core", "@gucco/ui", "@gucco/commerce-ui", "@gucco/config"]
+  ],
+  "linked": [],
+  "access": "public",
+  "baseBranch": "main",
+  "updateInternalDependencies": "patch",
+  "privatePackages": false,
+  "ignore": []
+}

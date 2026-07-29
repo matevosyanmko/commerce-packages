@@ -4,7 +4,7 @@
 // that would show it — an unstyled dialog on a styled page.
 
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Button } from "@storefront/ui/button";
+import { Button } from "@gucco/ui/button";
 import {
   Dialog,
   DialogClose,
@@ -14,7 +14,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@storefront/ui/dialog";
+} from "@gucco/ui/dialog";
 
 const meta: Meta = {
   title: "ui/Dialog",

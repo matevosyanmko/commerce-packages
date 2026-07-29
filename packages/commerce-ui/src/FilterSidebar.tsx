@@ -1,17 +1,17 @@
 import { useEffect, useId, useState } from "react";
-import type { Facet, Facets } from "@storefront/commerce-core";
-import { activeFilterCount, toggleInList, type FilterValue } from "@storefront/commerce-core";
+import type { Facet, Facets } from "@gucco/commerce-core";
+import { activeFilterCount, toggleInList, type FilterValue } from "@gucco/commerce-core";
 import { useRegion } from "./RegionProvider";
-import { Checkbox } from "@storefront/ui/checkbox";
+import { Checkbox } from "@gucco/ui/checkbox";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@storefront/ui/collapsible";
-import { RadioGroup, RadioGroupItem } from "@storefront/ui/radio-group";
-import { Slider } from "@storefront/ui/slider";
-import { formatMoney } from "@storefront/commerce-core";
-import { cn } from "@storefront/ui/utils";
+} from "@gucco/ui/collapsible";
+import { RadioGroup, RadioGroupItem } from "@gucco/ui/radio-group";
+import { Slider } from "@gucco/ui/slider";
+import { formatMoney } from "@gucco/commerce-core";
+import { cn } from "@gucco/ui/utils";
 import { Check } from "lucide-react";
 import { useStorefront, type ColourSwatch } from "./StorefrontProvider";
 

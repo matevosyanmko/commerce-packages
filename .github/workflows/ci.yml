@@ -1,0 +1,95 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+# A newer run on the same branch makes the older one pointless.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.3.14
+
+      # Node is needed for scripts/fix-esm-extensions.mjs and for the bare-ESM
+      # resolution check below — that check is only meaningful under real Node.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - run: bun install --frozen-lockfile
+
+      # Build BEFORE typecheck. commerce-ui resolves its siblings through their
+      # `types` field, which points at dist — so on a cold checkout with no dist
+      # on disk, typecheck fails with 125 "Cannot find module '@gucco/ui/...'"
+      # errors. Locally this is invisible: dist is always left over from an
+      # earlier build.
+      #
+      # `build` chains clean -> tsc -> fix-esm-extensions in each package, in
+      # workspace dependency order. The fixup script exits non-zero if any
+      # relative specifier is left extensionless, so a broken emit fails here
+      # rather than at a consumer's SSR boundary.
+      - run: bun run build
+
+      - run: bun run typecheck
+
+      - run: bun run smoke
+
+      # Storybook resolves the packages through its own alias table rather than
+      # node_modules, so it can break in ways nothing else here catches — a
+      # scope rename that misses those aliases builds fine everywhere else and
+      # fails only at "Rollup failed to resolve import".
+      - run: bun run --cwd storybook build
+
+      # The published packages must resolve under plain Node ESM, with no
+      # bundler in the picture. Importing each barrel pulls in every module.
+      - name: Resolve every dist module in bare Node ESM
+        run: |
+          node --input-type=module -e "
+          import { readdirSync } from 'node:fs';
+          for (const p of ['commerce-core','ui','commerce-ui']) {
+            const d = './packages/'+p+'/dist';
+            const files = readdirSync(d).filter(f => f.endsWith('.js'));
+            for (const f of files) await import(d+'/'+f);
+            console.log(p+': '+files.length+' modules resolved');
+          }
+          "
+
+      # Both tools are pinned devDependencies, run from node_modules/.bin rather
+      # than `bunx <tool>@latest` — an unpinned fetch means a release of theirs
+      # can turn CI red without anything here changing, and the bunx cache has
+      # already proven able to land in a broken state.
+      - name: publint
+        run: |
+          for p in commerce-core ui commerce-ui config; do
+            echo "--- $p"
+            ./node_modules/.bin/publint "packages/$p"
+          done
+
+      # Reports how types resolve under node16/node10/bundler. Informational:
+      # the "no CJS entrypoint" finding is expected and intentional, since these
+      # packages are deliberately ESM-only — so this must not gate the build.
+      - name: Are the types wrong?
+        run: |
+          for p in commerce-core ui commerce-ui config; do
+            echo "--- $p"
+            ./node_modules/.bin/attw --pack "packages/$p" || true
+          done
+
+      # Packages must never read a brand literal or an env var; see CLAUDE.md.
+      - name: Brand-leak gate
+        run: |
+          if grep -rniE "fleurette|import\.meta\.env|process\.env" packages/*/src; then
+            echo "::error::Brand or env leak in a package — see the 'one rule' in CLAUDE.md"
+            exit 1
+          fi
+          echo "no leaks"

@@ -1,8 +1,8 @@
 /*
- * @storefront/config — the shared Tailwind theme CONTRACT.
+ * @gucco/config — the shared Tailwind theme CONTRACT.
  *
  * Imported by every store's styles.css. This file defines the token → utility
- * mapping and the custom utilities the shared @storefront/* components rely on.
+ * mapping and the custom utilities the shared @gucco/* components rely on.
  * It defines NO colours, NO fonts and NO brand styling — every `var(--x)` here
  * is a variable the consuming app MUST define in its own `:root` / `.dark`
  * blocks. Reskinning a store = defining these variables, never editing this file.

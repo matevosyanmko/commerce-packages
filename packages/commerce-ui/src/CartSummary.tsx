@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { toast } from "sonner";
-import type { Cart } from "@storefront/commerce-core";
+import type { Cart } from "@gucco/commerce-core";
 import { useCart } from "./CartProvider";
 import { useRegion } from "./RegionProvider";
-import { formatMoney } from "@storefront/commerce-core";
-import { Button } from "@storefront/ui/button";
-import { Input } from "@storefront/ui/input";
+import { formatMoney } from "@gucco/commerce-core";
+import { Button } from "@gucco/ui/button";
+import { Input } from "@gucco/ui/input";
 
 export function CartSummary({ cart, action }: { cart: Cart; action?: React.ReactNode }) {
   const { region } = useRegion();

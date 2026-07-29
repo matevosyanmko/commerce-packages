@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@storefront/ui/tabs";
-import { cn } from "@storefront/ui/utils";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@gucco/ui/tabs";
+import { cn } from "@gucco/ui/utils";
 import { StoreImage } from "./StoreImage";
 
 /**

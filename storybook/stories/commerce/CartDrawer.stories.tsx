@@ -4,8 +4,8 @@
 
 import { useEffect, useRef } from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Button } from "@storefront/ui/button";
-import { CartDrawer, useCart } from "@storefront/commerce-ui";
+import { Button } from "@gucco/ui/button";
+import { CartDrawer, useCart } from "@gucco/commerce-ui";
 import { baseConfig } from "../../src/decorator";
 import { PRODUCTS } from "../../src/fixture";
 

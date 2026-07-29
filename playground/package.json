@@ -6,6 +6,6 @@
     "smoke": "bun run smoke.ts"
   },
   "dependencies": {
-    "@storefront/commerce-core": "workspace:*"
+    "@gucco/commerce-core": "workspace:*"
   }
 }

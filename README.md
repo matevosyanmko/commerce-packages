@@ -2,7 +2,7 @@
 
 Shared, publishable packages behind our Medusa + TanStack Start storefronts
 (flowers, furniture, electronics, …). One repo, developed together; each package
-publishes independently under the `@storefront/*` scope and is installed by each
+publishes independently under the `@gucco/*` scope and is installed by each
 store's own repo.
 
 > **Why:** the storefronts are deliberately identical except content, branding and
@@ -13,10 +13,10 @@ store's own repo.
 
 | Package | What it is | Status |
 | ------- | ---------- | ------ |
-| `@storefront/commerce-core` | Backend-neutral data seam — catalog, cart, orders, customer, pricing, filters, facets, Medusa↔neutral mapping. **Zero brand data, zero brand literals.** | ✅ extracted |
-| `@storefront/ui` | 46 Radix UI primitive wrappers + `cn()` + `use-mobile` (brand-agnostic). | ✅ extracted |
-| `@storefront/commerce-ui` | Shared commerce components + the four providers (StorefrontProvider, StoreImage, Navbar, MegaMenu, cart, filters, homepage sections, …). | ✅ extracted |
-| `@storefront/config` | Tailwind theme contract + tsconfig base + prettier config. | ✅ extracted |
+| `@gucco/commerce-core` | Backend-neutral data seam — catalog, cart, orders, customer, pricing, filters, facets, Medusa↔neutral mapping. **Zero brand data, zero brand literals.** | ✅ extracted |
+| `@gucco/ui` | 46 Radix UI primitive wrappers + `cn()` + `use-mobile` (brand-agnostic). | ✅ extracted |
+| `@gucco/commerce-ui` | Shared commerce components + the four providers (StorefrontProvider, StoreImage, Navbar, MegaMenu, cart, filters, homepage sections, …). | ✅ extracted |
+| `@gucco/config` | Tailwind theme contract + tsconfig base + prettier config. | ✅ extracted |
 
 ## The one rule
 
@@ -28,7 +28,7 @@ payment / promo config, user-facing copy — is **injected**, not imported.
 by handing in its own data and config.
 
 ```ts
-import { createCommerceApi } from "@storefront/commerce-core";
+import { createCommerceApi } from "@gucco/commerce-core";
 
 export const api = createCommerceApi({
   data: {
@@ -69,16 +69,16 @@ A store wiring these packages needs three things beyond `bun add`:
 
 1. **`styles.css`** — import the theme contract and scan the package dists:
    ```css
-   @source "../node_modules/@storefront/ui/dist";
-   @source "../node_modules/@storefront/commerce-ui/dist";
-   @import "@storefront/config/theme.css";
+   @source "../node_modules/@gucco/ui/dist";
+   @source "../node_modules/@gucco/commerce-ui/dist";
+   @import "@gucco/config/theme.css";
    ```
    Tailwind's `source(none)` means classes used *only* inside a package are
    silently dropped without those `@source` lines.
 2. **The CSS variables** listed at the top of `config/css/theme.css`, in `:root`
    and `.dark`. That's the whole re-skin.
 3. **`vite.config.ts`** — while packages are consumed via `bun link`, add
-   `ssr.noExternal` for `/^@storefront\//` (plus `/^@radix-ui\//` and the other
+   `ssr.noExternal` for `/^@gucco\//` (plus `/^@radix-ui\//` and the other
    React-using UI libs) and extend `resolve.dedupe` with `@tanstack/react-router`,
    `sonner` and `lucide-react`. Symlinked packages otherwise resolve their own
    React and you get "Invalid hook call" in SSR. Unnecessary once installed from
@@ -96,7 +96,7 @@ them at its own accent colours. Renaming these to neutral token names
 
 ```bash
 bun install
-bun run build       # build every @storefront/* package to dist
+bun run build       # build every @gucco/* package to dist
 bun run typecheck   # typecheck every package
 bun run smoke       # run the commerce-core smoke harness (playground/)
 ```
@@ -111,8 +111,8 @@ Until published, link locally:
 
 ```bash
 # in a store repo
-bun link @storefront/commerce-core   # after `bun link` inside the package
+bun link @gucco/commerce-core   # after `bun link` inside the package
 ```
 
-Once published to a registry, stores `bun add @storefront/commerce-core` and
+Once published to a registry, stores `bun add @gucco/commerce-core` and
 pin versions independently.

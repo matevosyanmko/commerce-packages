@@ -6,7 +6,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
-import { Button } from "@storefront/ui/button";
+import { Button } from "@gucco/ui/button";
 import {
   Form,
   FormControl,
@@ -15,9 +15,9 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@storefront/ui/form";
-import { Input } from "@storefront/ui/input";
-import { Textarea } from "@storefront/ui/textarea";
+} from "@gucco/ui/form";
+import { Input } from "@gucco/ui/input";
+import { Textarea } from "@gucco/ui/textarea";
 
 interface Values {
   email: string;
