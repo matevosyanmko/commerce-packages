@@ -1,5 +1,15 @@
 # @gucco/commerce-ui
 
+## 0.2.2
+
+### Patch Changes
+
+- [#17](https://github.com/matevosyanmko/commerce-packages/pull/17) [`24a6258`](https://github.com/matevosyanmko/commerce-packages/commit/24a625875db1365adba21e87cbfb395724872948) Thanks [@matevosyanmko](https://github.com/matevosyanmko)! - Stop `ProductCard` rendering a broken image for a product with no images. The fallback
+  `[product.images[0]]` evaluated to `[undefined]` on an empty list, which rendered an `<img>`
+  with no `src`; the card now shows the empty frame instead.
+- Updated dependencies [[`24a6258`](https://github.com/matevosyanmko/commerce-packages/commit/24a625875db1365adba21e87cbfb395724872948)]:
+  - @gucco/commerce-core@0.2.2
+
 ## 0.2.1
 
 ### Patch Changes
