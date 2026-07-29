@@ -1,4 +1,4 @@
-import type { Product } from "@storefront/commerce-core";
+import type { Product } from "@gucco/commerce-core";
 import { ProductCard } from "./ProductCard";
 
 // The first row is above the fold on every viewport we target, so those cards

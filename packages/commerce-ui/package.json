@@ -1,7 +1,28 @@
 {
-  "name": "@storefront/commerce-ui",
+  "name": "@gucco/commerce-ui",
   "version": "0.1.0",
   "description": "Shared commerce components + providers. Brand values injected via StorefrontProvider.",
+  "keywords": [
+    "react",
+    "commerce",
+    "ecommerce",
+    "medusa",
+    "storefront"
+  ],
+  "license": "MIT",
+  "author": "Mko Matevosyan <matevosyanmko@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matevosyanmko/commerce-packages.git",
+    "directory": "packages/commerce-ui"
+  },
+  "homepage": "https://github.com/matevosyanmko/commerce-packages/tree/main/packages/commerce-ui#readme",
+  "bugs": {
+    "url": "https://github.com/matevosyanmko/commerce-packages/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -18,17 +39,20 @@
     "./package.json": "./package.json"
   },
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "sideEffects": false,
   "scripts": {
-    "build": "tsc -p tsconfig.build.json",
+    "build": "bun run clean && tsc -p tsconfig.build.json && node ../../scripts/fix-esm-extensions.mjs dist",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "clean": "rimraf dist"
+    "clean": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\"",
+    "prepublishOnly": "bun run build",
+    "pack:check": "bun pm pack --dry-run"
   },
   "dependencies": {
-    "@storefront/commerce-core": "workspace:*",
-    "@storefront/ui": "workspace:*"
+    "@gucco/commerce-core": "^0.1.0",
+    "@gucco/ui": "^0.1.0"
   },
   "peerDependencies": {
     "react": ">=19",

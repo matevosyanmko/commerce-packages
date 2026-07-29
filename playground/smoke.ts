@@ -1,4 +1,4 @@
-// Smoke harness for @storefront/commerce-core.
+// Smoke harness for @gucco/commerce-core.
 //
 // Proves the extracted seam works at runtime AND is genuinely domain-agnostic:
 // the fixture below is a GADGETS store, not flowers. The same published core
@@ -13,7 +13,7 @@ import {
   type CommerceData,
   type Product,
   type Region,
-} from "@storefront/commerce-core";
+} from "@gucco/commerce-core";
 
 /* ── A minimal in-memory localStorage so the cart/order flow is exercisable in
       a non-browser runtime (the core no-ops persistence when window is absent). */

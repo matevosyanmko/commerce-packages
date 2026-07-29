@@ -15,8 +15,8 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@storefront/ui/alert-dialog";
-import { Button } from "@storefront/ui/button";
+} from "@gucco/ui/alert-dialog";
+import { Button } from "@gucco/ui/button";
 import {
   ContextMenu,
   ContextMenuContent,
@@ -24,7 +24,7 @@ import {
   ContextMenuSeparator,
   ContextMenuShortcut,
   ContextMenuTrigger,
-} from "@storefront/ui/context-menu";
+} from "@gucco/ui/context-menu";
 import {
   Drawer,
   DrawerClose,
@@ -34,7 +34,7 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "@storefront/ui/drawer";
+} from "@gucco/ui/drawer";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -43,8 +43,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuTrigger,
-} from "@storefront/ui/dropdown-menu";
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "@storefront/ui/hover-card";
+} from "@gucco/ui/dropdown-menu";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@gucco/ui/hover-card";
 import {
   Menubar,
   MenubarContent,
@@ -52,8 +52,8 @@ import {
   MenubarMenu,
   MenubarSeparator,
   MenubarTrigger,
-} from "@storefront/ui/menubar";
-import { Popover, PopoverContent, PopoverTrigger } from "@storefront/ui/popover";
+} from "@gucco/ui/menubar";
+import { Popover, PopoverContent, PopoverTrigger } from "@gucco/ui/popover";
 import {
   Sheet,
   SheetContent,
@@ -61,8 +61,8 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@storefront/ui/sheet";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@storefront/ui/tooltip";
+} from "@gucco/ui/sheet";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@gucco/ui/tooltip";
 
 // The roots (Popover, Sheet, …) are re-exported Radix primitives with nothing of
 // ours on them, so the tables point at the parts this package actually wraps.

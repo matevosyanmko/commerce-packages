@@ -1,7 +1,29 @@
 {
-  "name": "@storefront/config",
+  "name": "@gucco/config",
   "version": "0.1.0",
+  "type": "module",
   "description": "Shared tooling for the storefronts: the Tailwind theme contract, the TypeScript base config and the Prettier config.",
+  "keywords": [
+    "tailwindcss",
+    "tsconfig",
+    "prettier",
+    "config",
+    "storefront"
+  ],
+  "license": "MIT",
+  "author": "Mko Matevosyan <matevosyanmko@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matevosyanmko/commerce-packages.git",
+    "directory": "packages/config"
+  },
+  "homepage": "https://github.com/matevosyanmko/commerce-packages/tree/main/packages/config#readme",
+  "bugs": {
+    "url": "https://github.com/matevosyanmko/commerce-packages/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     "./theme.css": "./css/theme.css",
     "./tsconfig.base.json": "./tsconfig.base.json",

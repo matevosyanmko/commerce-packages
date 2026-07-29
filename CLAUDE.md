@@ -4,7 +4,7 @@ Guidance for Claude Code in **commerce-packages** — the shared packages behind
 Medusa + TanStack Start storefronts (flowers, furniture, electronics, …).
 
 One repo, four packages, developed together and published independently under the
-`@storefront/*` scope. Each **store** is its own repo and installs them.
+`@gucco/*` scope. Each **store** is its own repo and installs them.
 
 ---
 
@@ -34,9 +34,9 @@ are known and fine — they're neutral defaults, not brand values. Anything else
 
 Ask **"would another store use this unchanged?"**
 
-- Pure UI primitive, no commerce concepts → **`@storefront/ui`**
-- Knows about products/cart/orders → **`@storefront/commerce-ui`**
-- No JSX at all → **`@storefront/commerce-core`**
+- Pure UI primitive, no commerce concepts → **`@gucco/ui`**
+- Knows about products/cart/orders → **`@gucco/commerce-ui`**
+- No JSX at all → **`@gucco/commerce-core`**
 - Brand-specific → **it doesn't belong here.** It goes in the store's own repo.
 
 When unsure, leave it in the store. Promoting later is easy; extracting a leaked
@@ -53,7 +53,7 @@ checkbox list; every `copy.*` → plain wording).
 
 ## How stores consume this
 
-**Directly** — `import { ProductCard } from "@storefront/commerce-ui"`. Stores do **not** wrap
+**Directly** — `import { ProductCard } from "@gucco/commerce-ui"`. Stores do **not** wrap
 our components in local re-export files; that layer existed during the migration and was
 removed, because a local-looking path that isn't local is exactly how someone ends up editing
 a file that does nothing.
@@ -86,6 +86,7 @@ bun run build       # every package to dist (tsc, with .d.ts)
 bun run typecheck
 bun run smoke       # commerce-core harness in playground/
 bun run storybook   # visual harness for ui + commerce-ui, on :6006
+bun run changeset   # describe a change for the next release
 ```
 
 `playground/` and `storybook/` are throwaway harnesses, not stores. Both drive a
@@ -103,6 +104,35 @@ neutral-fallback rule has; when you add a config entry with a fallback, add its 
 **After changing a package, rebuild `dist` before testing a store against it** — stores
 resolve `dist`, not `src`, so an unbuilt change looks like "nothing happened". Storybook
 is the exception: it aliases the packages to `src` and needs no rebuild.
+
+## Releasing
+
+Published to public npm as `@gucco/*`. **Nobody runs `npm publish` by hand** — releases go
+out from CI, and the trigger is merging a PR.
+
+1. With your change, run `bun run changeset`, pick the bump, describe it in one line. Commit
+   the generated `.changeset/*.md` alongside the code.
+2. Merging to `main` makes the release workflow open (or update) a **Version Packages** PR
+   containing the version bumps, the rewritten internal ranges, and the changelogs.
+3. Merging *that* PR publishes all four. The diff you approved is exactly what shipped.
+
+**All four packages are `fixed` in `.changeset/config.json`** — they version and publish in
+lockstep, even when only one changed. They're one dependency arrow developed in one repo;
+versioning them independently buys nothing and creates a compatibility matrix to reason
+about. `updateInternalDependencies: "patch"` keeps `commerce-ui`'s ranges on its two
+siblings correct automatically — never hand-edit those.
+
+CI publishes over OIDC (**npm trusted publishing**), so there is no `NPM_TOKEN` secret and
+nothing to rotate. If you ever find yourself pasting a token or a 2FA code to ship a
+release, something has gone wrong — fix the pipeline instead.
+
+Bump guide, in terms of the rules above: a new barrel export or a new **optional** config
+entry (which by the neutral-fallback rule is non-breaking by construction) is a **minor**;
+removing an export, renaming a prop, or making a config entry required is a **major** — as
+is the planned `--bloom`/`--petal` token rename, since it breaks every store's CSS.
+
+Releases are permanent. A bad one is fixed with `npm deprecate` plus a patch, never
+`npm unpublish`.
 
 ## Traps that cost real debugging time
 
@@ -122,7 +152,7 @@ is the exception: it aliases the packages to `src` and needs no rebuild.
 - **Tailwind silently drops package-only classes.** Stores use
   `@import "tailwindcss" source(none)`, so a class that appears *only* inside a package
   component is never generated. Every store must
-  `@source "../node_modules/@storefront/{ui,commerce-ui}/dist"`.
+  `@source "../node_modules/@gucco/{ui,commerce-ui}/dist"`.
 - **Context/singleton libraries must be peer deps**, never regular deps:
   `react`, `react-dom`, `@tanstack/react-query`, `@tanstack/react-router`, `sonner`.
   Two copies of the router = no route context; two copies of sonner = toasts vanish.
@@ -143,7 +173,7 @@ is the exception: it aliases the packages to `src` and needs no rebuild.
 - Components moved from a store should arrive **verbatim**, with only imports rewritten
   and brand values lifted into config. Resist "improving" them in the same pass — it makes
   the diff unreviewable and hides regressions.
-- Prefer subpath imports (`@storefront/ui/button`) in package-internal code; stores may use
+- Prefer subpath imports (`@gucco/ui/button`) in package-internal code; stores may use
   either.
 
 ## Known debt

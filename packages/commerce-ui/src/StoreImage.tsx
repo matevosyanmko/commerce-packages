@@ -1,5 +1,5 @@
 import { forwardRef, useEffect, useMemo, useRef, useState } from "react";
-import { cn } from "@storefront/ui/utils";
+import { cn } from "@gucco/ui/utils";
 import { useOptionalStorefront } from "./StorefrontProvider";
 
 export type ImageSize = "sm" | "base" | "lg";
@@ -45,7 +45,7 @@ export interface StoreImageProps extends React.ImgHTMLAttributes<HTMLImageElemen
 /**
  * Catalog image with progressive loading.
  *
- * Brand-specific inline imagery (e.g. Fleurette's procedural `bloom:` SVGs) is
+ * Brand-specific inline imagery (e.g. a florist's procedural `bloom:` SVGs) is
  * resolved through the injected `inlineImage` resolver on StorefrontConfig — this
  * component knows nothing about any particular scheme. A resolved inline image
  * (and any `data:` URI) renders immediately with no network request and no

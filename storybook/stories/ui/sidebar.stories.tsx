@@ -22,7 +22,7 @@ import {
   SidebarProvider,
   SidebarSeparator,
   SidebarTrigger,
-} from "@storefront/ui/sidebar";
+} from "@gucco/ui/sidebar";
 
 const meta: Meta = {
   title: "ui/Sidebar",

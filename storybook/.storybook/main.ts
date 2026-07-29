@@ -64,7 +64,7 @@ const config: StorybookConfig = {
       // edit needs `bun run build` before a story reflects it — the same papercut
       // stores hit, and the reason a change can look like it did nothing.
       // Subpaths are listed first: vite takes the first matching alias, so
-      // `@storefront/ui/utils` must be tried before the bare `@storefront/ui`.
+      // `@gucco/ui/utils` must be tried before the bare `@gucco/ui`.
       alias: [
         { find: /^@storefront\/ui\/(.*)$/, replacement: pkg("ui", "/$1") },
         { find: /^@storefront\/ui$/, replacement: pkg("ui", "/index.ts") },

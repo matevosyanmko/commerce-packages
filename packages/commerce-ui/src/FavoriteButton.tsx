@@ -1,7 +1,7 @@
 import { Heart } from "lucide-react";
 import { toast } from "sonner";
 import { useFavorites } from "./FavoritesProvider";
-import { cn } from "@storefront/ui/utils";
+import { cn } from "@gucco/ui/utils";
 
 /**
  * Save/unsave a product.

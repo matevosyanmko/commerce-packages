@@ -1,7 +1,7 @@
 import { SlidersHorizontal } from "lucide-react";
-import type { Facets } from "@storefront/commerce-core";
-import type { FilterValue } from "@storefront/commerce-core";
-import { Button } from "@storefront/ui/button";
+import type { Facets } from "@gucco/commerce-core";
+import type { FilterValue } from "@gucco/commerce-core";
+import { Button } from "@gucco/ui/button";
 import {
   Sheet,
   SheetClose,
@@ -10,7 +10,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@storefront/ui/sheet";
+} from "@gucco/ui/sheet";
 import { FilterSidebar } from "./FilterSidebar";
 
 /**

@@ -4,16 +4,16 @@
 import { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Bold, Italic, Underline } from "lucide-react";
-import { Checkbox } from "@storefront/ui/checkbox";
-import { Input } from "@storefront/ui/input";
-import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from "@storefront/ui/input-otp";
-import { Label } from "@storefront/ui/label";
-import { RadioGroup, RadioGroupItem, RadioGroupPill } from "@storefront/ui/radio-group";
-import { Slider } from "@storefront/ui/slider";
-import { Switch } from "@storefront/ui/switch";
-import { Textarea } from "@storefront/ui/textarea";
-import { Toggle } from "@storefront/ui/toggle";
-import { ToggleGroup, ToggleGroupItem } from "@storefront/ui/toggle-group";
+import { Checkbox } from "@gucco/ui/checkbox";
+import { Input } from "@gucco/ui/input";
+import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from "@gucco/ui/input-otp";
+import { Label } from "@gucco/ui/label";
+import { RadioGroup, RadioGroupItem, RadioGroupPill } from "@gucco/ui/radio-group";
+import { Slider } from "@gucco/ui/slider";
+import { Switch } from "@gucco/ui/switch";
+import { Textarea } from "@gucco/ui/textarea";
+import { Toggle } from "@gucco/ui/toggle";
+import { ToggleGroup, ToggleGroupItem } from "@gucco/ui/toggle-group";
 
 // Toggle leads because it's the one with variants. Input, Textarea, Checkbox,
 // Switch, Slider and the OTP parts pass everything straight through to Radix, so

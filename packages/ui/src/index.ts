@@ -1,5 +1,5 @@
-// @storefront/ui — brand-agnostic Radix primitive wrappers.
-// Consumers may import the barrel or a subpath (@storefront/ui/button).
+// @gucco/ui — brand-agnostic Radix primitive wrappers.
+// Consumers may import the barrel or a subpath (@gucco/ui/button).
 export * from "./accordion";
 export * from "./alert-dialog";
 export * from "./alert";

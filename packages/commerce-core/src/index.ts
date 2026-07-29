@@ -1,4 +1,4 @@
-// @storefront/commerce-core — the backend-neutral commerce seam.
+// @gucco/commerce-core — the backend-neutral commerce seam.
 //
 // Everything a storefront needs to read catalog / cart / order / customer data,
 // with zero brand data and zero brand literals inside. The catalog and store

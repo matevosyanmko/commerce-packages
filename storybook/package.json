@@ -1,5 +1,5 @@
 {
-  "name": "storybook",
+  "name": "storybook-harness",
   "private": true,
   "type": "module",
   "scripts": {
@@ -8,10 +8,10 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@storefront/commerce-core": "workspace:*",
-    "@storefront/commerce-ui": "workspace:*",
-    "@storefront/config": "workspace:*",
-    "@storefront/ui": "workspace:*"
+    "@gucco/commerce-core": "workspace:*",
+    "@gucco/commerce-ui": "workspace:*",
+    "@gucco/config": "workspace:*",
+    "@gucco/ui": "workspace:*"
   },
   "devDependencies": {
     "@storybook/addon-docs": "^9.1.10",

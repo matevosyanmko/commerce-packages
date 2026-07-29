@@ -14,7 +14,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
   type ChartConfig,
-} from "@storefront/ui/chart";
+} from "@gucco/ui/chart";
 
 const data = [
   { month: "Jan", audio: 186, desk: 80 },

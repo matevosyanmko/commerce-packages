@@ -11,7 +11,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import type { Customer } from "@storefront/commerce-core";
+import type { Customer } from "@gucco/commerce-core";
 import { useStorefront } from "./StorefrontProvider";
 
 type AuthStatus = "loading" | "authenticated" | "guest";

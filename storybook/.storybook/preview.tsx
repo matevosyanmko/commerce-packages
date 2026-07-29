@@ -1,5 +1,5 @@
 import type { Preview } from "@storybook/react-vite";
-import type { StorefrontConfig } from "@storefront/commerce-ui";
+import type { StorefrontConfig } from "@gucco/commerce-ui";
 import { baseConfig, StoryHarness } from "../src/decorator";
 import "../src/preview.css";
 

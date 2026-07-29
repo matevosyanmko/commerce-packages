@@ -6,8 +6,8 @@
 // homepage.
 
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import type { HomepageSection } from "@storefront/commerce-core";
-import { HeroCarousel, HomepageSections, SectionHeading, ShopByRoom } from "@storefront/commerce-ui";
+import type { HomepageSection } from "@gucco/commerce-core";
+import { HeroCarousel, HomepageSections, SectionHeading, ShopByRoom } from "@gucco/commerce-ui";
 import { SECTIONS, SLIDES, TILES } from "../../src/homepage";
 
 const meta: Meta = {

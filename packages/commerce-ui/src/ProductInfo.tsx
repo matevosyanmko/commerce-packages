@@ -1,14 +1,14 @@
 import { useEffect, useMemo, useState, type ReactNode } from "react";
-import type { Product, ProductVariant } from "@storefront/commerce-core";
-import { discountPercent } from "@storefront/commerce-core";
-import { variantPrice } from "@storefront/commerce-core";
+import type { Product, ProductVariant } from "@gucco/commerce-core";
+import { discountPercent } from "@gucco/commerce-core";
+import { variantPrice } from "@gucco/commerce-core";
 import { useRegion } from "./RegionProvider";
 import { useCart } from "./CartProvider";
 import { useStorefront } from "./StorefrontProvider";
 import { FavoriteButton } from "./FavoriteButton";
 import { Price } from "./Price";
 import { VariantPicker } from "./VariantPicker";
-import { Button } from "@storefront/ui/button";
+import { Button } from "@gucco/ui/button";
 import { useNavigate } from "@tanstack/react-router";
 import { toast } from "sonner";
 

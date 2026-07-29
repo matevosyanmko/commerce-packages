@@ -2,18 +2,30 @@
   "name": "commerce-packages",
   "private": true,
   "type": "module",
+  "license": "MIT",
+  "author": "Mko Matevosyan <matevosyanmko@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matevosyanmko/commerce-packages.git"
+  },
   "workspaces": [
     "packages/*",
     "playground",
     "storybook"
   ],
   "scripts": {
-    "build": "bun run --filter '@storefront/*' build",
-    "typecheck": "bun run --filter '@storefront/*' typecheck",
+    "build": "bun run --filter '@gucco/*' build",
+    "typecheck": "bun run --filter '@gucco/*' typecheck",
+    "pack:check": "bun run --filter '@gucco/*' pack:check",
     "smoke": "bun run --cwd playground smoke",
-    "storybook": "bun run --cwd storybook dev"
+    "storybook": "bun run --cwd storybook dev",
+    "changeset": "changeset",
+    "version-packages": "changeset version && bun install --lockfile-only",
+    "release": "bun run build && changeset publish"
   },
   "devDependencies": {
+    "@changesets/changelog-github": "^0.7.0",
+    "@changesets/cli": "^2.31.1",
     "typescript": "^5.8.3"
   }
 }
