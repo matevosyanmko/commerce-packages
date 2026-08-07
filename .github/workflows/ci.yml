@@ -37,7 +37,7 @@ jobs:
 
       # Build BEFORE typecheck. commerce-ui resolves its siblings through their
       # `types` field, which points at dist — so on a cold checkout with no dist
-      # on disk, typecheck fails with 125 "Cannot find module '@gucco/ui/...'"
+      # on disk, typecheck fails with 125 "Cannot find module '@wm-storefront/ui/...'"
       # errors. Locally this is invisible: dist is always left over from an
       # earlier build.
       #
