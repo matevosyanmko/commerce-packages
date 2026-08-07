@@ -1,6 +1,6 @@
 import { useRegion } from "./RegionProvider";
-import { formatMoney } from "@gucco/commerce-core";
-import { cn } from "@gucco/ui/utils";
+import { formatMoney } from "@wm-storefront/commerce-core";
+import { cn } from "@wm-storefront/ui/utils";
 
 export interface PriceProps {
   amount: number;

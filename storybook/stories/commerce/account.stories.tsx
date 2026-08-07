@@ -1,9 +1,9 @@
 // Account surfaces: the auth page shell and the favourite toggle.
 
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Button } from "@gucco/ui/button";
-import { Input } from "@gucco/ui/input";
-import { AuthField, AuthShell, FavoriteButton } from "@gucco/commerce-ui";
+import { Button } from "@wm-storefront/ui/button";
+import { Input } from "@wm-storefront/ui/input";
+import { AuthField, AuthShell, FavoriteButton } from "@wm-storefront/commerce-ui";
 import { PRODUCTS } from "../../src/fixture";
 
 const meta: Meta = {

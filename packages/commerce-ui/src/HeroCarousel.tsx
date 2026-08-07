@@ -1,8 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
-import type { HeroSlide } from "@gucco/commerce-core";
-import { cn } from "@gucco/ui/utils";
+import type { HeroSlide } from "@wm-storefront/commerce-core";
+import { cn } from "@wm-storefront/ui/utils";
 import { useStorefront } from "./StorefrontProvider";
 import { StoreImage } from "./StoreImage";
 

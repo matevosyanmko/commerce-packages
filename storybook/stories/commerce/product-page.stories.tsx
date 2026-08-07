@@ -10,7 +10,7 @@ import {
   ProductGridSkeleton,
   ProductInfo,
   ProductPerk,
-} from "@gucco/commerce-ui";
+} from "@wm-storefront/commerce-ui";
 import { PRODUCTS } from "../../src/fixture";
 
 const product = PRODUCTS.find((p) => p.handle === "meridian-watch")!;

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Price, StoreImage, VariantPicker, withSize } from "@gucco/commerce-ui";
+import { Price, StoreImage, VariantPicker, withSize } from "@wm-storefront/commerce-ui";
 import { PRODUCTS } from "../../src/fixture";
 
 const meta: Meta = {

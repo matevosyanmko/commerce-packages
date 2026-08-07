@@ -8,10 +8,10 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@gucco/commerce-core": "workspace:*",
-    "@gucco/commerce-ui": "workspace:*",
-    "@gucco/config": "workspace:*",
-    "@gucco/ui": "workspace:*"
+    "@wm-storefront/commerce-core": "workspace:*",
+    "@wm-storefront/commerce-ui": "workspace:*",
+    "@wm-storefront/config": "workspace:*",
+    "@wm-storefront/ui": "workspace:*"
   },
   "devDependencies": {
     "@storybook/addon-docs": "^9.1.10",

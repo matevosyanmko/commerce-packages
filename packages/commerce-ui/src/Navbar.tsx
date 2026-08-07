@@ -4,7 +4,7 @@ import { Heart, ShoppingBag, User } from "lucide-react";
 import { useState } from "react";
 import { useCart } from "./CartProvider";
 import { useFavorites } from "./FavoritesProvider";
-import { cn } from "@gucco/ui/utils";
+import { cn } from "@wm-storefront/ui/utils";
 import { useStorefront } from "./StorefrontProvider";
 import { MegaMenu } from "./MegaMenu";
 import { MobileNav } from "./MobileNav";

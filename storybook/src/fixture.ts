@@ -16,7 +16,7 @@ import type {
   ProductOption,
   ProductVariant,
   Region,
-} from "@gucco/commerce-core";
+} from "@wm-storefront/commerce-core";
 
 export const REGION: Region = {
   id: "reg_eu",

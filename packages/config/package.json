@@ -1,5 +1,5 @@
 {
-  "name": "@gucco/config",
+  "name": "@wm-storefront/config",
   "version": "0.2.1",
   "type": "module",
   "description": "Shared tooling for the storefronts: the Tailwind theme contract, the TypeScript base config and the Prettier config.",

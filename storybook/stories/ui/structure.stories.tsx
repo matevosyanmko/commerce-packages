@@ -7,7 +7,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@gucco/ui/accordion";
+} from "@wm-storefront/ui/accordion";
 import {
   Breadcrumb,
   BreadcrumbEllipsis,
@@ -16,9 +16,9 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@gucco/ui/breadcrumb";
-import { Button } from "@gucco/ui/button";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@gucco/ui/collapsible";
+} from "@wm-storefront/ui/breadcrumb";
+import { Button } from "@wm-storefront/ui/button";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@wm-storefront/ui/collapsible";
 import {
   Pagination,
   PaginationContent,
@@ -27,7 +27,7 @@ import {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from "@gucco/ui/pagination";
+} from "@wm-storefront/ui/pagination";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -35,9 +35,9 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from "@gucco/ui/navigation-menu";
-import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@gucco/ui/resizable";
-import { ScrollArea, ScrollBar } from "@gucco/ui/scroll-area";
+} from "@wm-storefront/ui/navigation-menu";
+import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@wm-storefront/ui/resizable";
+import { ScrollArea, ScrollBar } from "@wm-storefront/ui/scroll-area";
 import {
   Table,
   TableBody,
@@ -46,8 +46,8 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@gucco/ui/table";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@gucco/ui/tabs";
+} from "@wm-storefront/ui/table";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@wm-storefront/ui/tabs";
 
 // The table, breadcrumb and tabs parts are className-only wrappers. These four
 // are the ones carrying their own props (`withHandle`, `isActive`/`size`,

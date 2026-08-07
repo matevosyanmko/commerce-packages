@@ -2,8 +2,8 @@
 // panel. The drawer (which reads from CartProvider instead) has its own file.
 
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Button } from "@gucco/ui/button";
-import { CartItem, CartSummary } from "@gucco/commerce-ui";
+import { Button } from "@wm-storefront/ui/button";
+import { CartItem, CartSummary } from "@wm-storefront/commerce-ui";
 import { CART, CART_ITEMS } from "../../src/fixture";
 
 const meta: Meta = {

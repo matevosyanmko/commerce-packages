@@ -12,7 +12,7 @@
 // loaders.
 
 import { queryOptions } from "@tanstack/react-query";
-import type { CommerceApi } from "@gucco/commerce-core";
+import type { CommerceApi } from "@wm-storefront/commerce-core";
 
 export function createStorefrontQueries(api: CommerceApi, defaultRegionId: string) {
   /**

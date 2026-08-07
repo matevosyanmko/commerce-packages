@@ -8,12 +8,12 @@
     // .storybook/main.ts — otherwise the editor reads dist and disagrees with
     // what Storybook actually renders.
     "paths": {
-      "@gucco/ui": ["../packages/ui/src/index.ts"],
-      "@gucco/ui/*": ["../packages/ui/src/*"],
-      "@gucco/commerce-ui": ["../packages/commerce-ui/src/index.ts"],
-      "@gucco/commerce-ui/*": ["../packages/commerce-ui/src/*"],
-      "@gucco/commerce-core": ["../packages/commerce-core/src/index.ts"],
-      "@gucco/commerce-core/*": ["../packages/commerce-core/src/*"]
+      "@wm-storefront/ui": ["../packages/ui/src/index.ts"],
+      "@wm-storefront/ui/*": ["../packages/ui/src/*"],
+      "@wm-storefront/commerce-ui": ["../packages/commerce-ui/src/index.ts"],
+      "@wm-storefront/commerce-ui/*": ["../packages/commerce-ui/src/*"],
+      "@wm-storefront/commerce-core": ["../packages/commerce-core/src/index.ts"],
+      "@wm-storefront/commerce-core/*": ["../packages/commerce-core/src/*"]
     }
   },
   "include": [".storybook", "src", "stories"]

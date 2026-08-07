@@ -4,7 +4,7 @@ Guidance for Claude Code in **commerce-packages** — the shared packages behind
 Medusa + TanStack Start storefronts (flowers, furniture, electronics, …).
 
 One repo, four packages, developed together and published independently under the
-`@gucco/*` scope. Each **store** is its own repo and installs them.
+`@wm-storefront/*` scope. Each **store** is its own repo and installs them.
 
 ---
 
@@ -34,9 +34,9 @@ are known and fine — they're neutral defaults, not brand values. Anything else
 
 Ask **"would another store use this unchanged?"**
 
-- Pure UI primitive, no commerce concepts → **`@gucco/ui`**
-- Knows about products/cart/orders → **`@gucco/commerce-ui`**
-- No JSX at all → **`@gucco/commerce-core`**
+- Pure UI primitive, no commerce concepts → **`@wm-storefront/ui`**
+- Knows about products/cart/orders → **`@wm-storefront/commerce-ui`**
+- No JSX at all → **`@wm-storefront/commerce-core`**
 - Brand-specific → **it doesn't belong here.** It goes in the store's own repo.
 
 When unsure, leave it in the store. Promoting later is easy; extracting a leaked
@@ -53,7 +53,7 @@ checkbox list; every `copy.*` → plain wording).
 
 ## How stores consume this
 
-**Directly** — `import { ProductCard } from "@gucco/commerce-ui"`. Stores do **not** wrap
+**Directly** — `import { ProductCard } from "@wm-storefront/commerce-ui"`. Stores do **not** wrap
 our components in local re-export files; that layer existed during the migration and was
 removed, because a local-looking path that isn't local is exactly how someone ends up editing
 a file that does nothing.
@@ -107,7 +107,7 @@ is the exception: it aliases the packages to `src` and needs no rebuild.
 
 ## Releasing
 
-Published to public npm as `@gucco/*`. **Nobody runs `npm publish` by hand** — releases go
+Published to public npm as `@wm-storefront/*`. **Nobody runs `npm publish` by hand** — releases go
 out from CI, and the trigger is merging a PR.
 
 1. With your change, run `bun run changeset`, pick the bump, describe it in one line. Commit
@@ -135,7 +135,7 @@ changeset for a sibling's change — changesets works the dependency arrow out i
 
 Consequence of independence: the four versions drift, so "we're on 0.3.1" no longer
 describes the repo. A store's four `^` ranges each move on their own schedule, and
-`@gucco/config` — which nothing depends on — only moves when it genuinely changes.
+`@wm-storefront/config` — which nothing depends on — only moves when it genuinely changes.
 
 CI publishes over OIDC (**npm trusted publishing**), so there is no `NPM_TOKEN` secret and
 nothing to rotate. If you ever find yourself pasting a token or a 2FA code to ship a
@@ -155,7 +155,7 @@ Releases are permanent. A bad one is fixed with `npm deprecate` plus a patch, ne
   `commerce-packages/node_modules`, so SSR gets two Reacts and every Radix component
   throws *"Invalid hook call"*. The client build hides it (it dedupes); dev SSR does
   not. Fix lives in the **store's** `vite.config.ts`: `ssr.noExternal` for
-  `/^@gucco\//`, `/^@radix-ui\//` and the React-using UI libs, plus
+  `/^@wm-storefront\//`, `/^@radix-ui\//` and the React-using UI libs, plus
   `resolve.dedupe` for react, router, query, sonner, lucide. Goes away once installed
   from a registry.
 - **Vite doesn't watch outside its own root.** `storybook/.storybook/main.ts` aliases the
@@ -167,7 +167,7 @@ Releases are permanent. A bad one is fixed with `npm deprecate` plus a patch, ne
 - **Tailwind silently drops package-only classes.** Stores use
   `@import "tailwindcss" source(none)`, so a class that appears *only* inside a package
   component is never generated. Every store must
-  `@source "../node_modules/@gucco/{ui,commerce-ui}/dist"`.
+  `@source "../node_modules/@wm-storefront/{ui,commerce-ui}/dist"`.
 - **Context/singleton libraries must be peer deps**, never regular deps:
   `react`, `react-dom`, `@tanstack/react-query`, `@tanstack/react-router`, `sonner`.
   Two copies of the router = no route context; two copies of sonner = toasts vanish.
@@ -188,7 +188,7 @@ Releases are permanent. A bad one is fixed with `npm deprecate` plus a patch, ne
 - Components moved from a store should arrive **verbatim**, with only imports rewritten
   and brand values lifted into config. Resist "improving" them in the same pass — it makes
   the diff unreviewable and hides regressions.
-- Prefer subpath imports (`@gucco/ui/button`) in package-internal code; stores may use
+- Prefer subpath imports (`@wm-storefront/ui/button`) in package-internal code; stores may use
   either.
 
 ## Known debt

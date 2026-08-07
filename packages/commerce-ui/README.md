@@ -1,4 +1,4 @@
-# @gucco/commerce-ui
+# @wm-storefront/commerce-ui
 
 Shared commerce components and providers for Medusa storefronts — product grids, cart drawer,
 variant picker, filter sidebar, checkout pieces — with every brand value **injected**, never
@@ -9,7 +9,7 @@ Part of [commerce-packages](https://github.com/matevosyanmko/commerce-packages).
 ## Install
 
 ```bash
-bun add @gucco/commerce-ui
+bun add @wm-storefront/commerce-ui
 ```
 
 Peer dependencies you must provide: `react`, `react-dom` (>=19), `@tanstack/react-query`,
@@ -17,15 +17,15 @@ Peer dependencies you must provide: `react`, `react-dom` (>=19), `@tanstack/reac
 on purpose — two copies of the router means no route context, and two copies of sonner means
 toasts silently vanish. ESM only.
 
-`@gucco/commerce-core` and `@gucco/ui` come along as regular dependencies.
+`@wm-storefront/commerce-core` and `@wm-storefront/ui` come along as regular dependencies.
 
 ## The injection seam
 
 One provider carries everything, read with `useStorefront()`:
 
 ```tsx
-import { StorefrontProvider, createStorefrontQueries } from "@gucco/commerce-ui";
-import { createCommerceApi } from "@gucco/commerce-core";
+import { StorefrontProvider, createStorefrontQueries } from "@wm-storefront/commerce-ui";
+import { createCommerceApi } from "@wm-storefront/commerce-core";
 
 const api = createCommerceApi({ /* … */ });
 const queries = createStorefrontQueries(api, defaultRegionId);
@@ -66,11 +66,11 @@ Auth wraps Cart so login can claim the guest cart.
 ## Theming
 
 Components use the token contract from
-[`@gucco/config`](https://www.npmjs.com/package/@gucco/config), and Tailwind needs
+[`@wm-storefront/config`](https://www.npmjs.com/package/@wm-storefront/config), and Tailwind needs
 to be pointed at the built package:
 
 ```css
-@source "../node_modules/@gucco/commerce-ui/dist";
+@source "../node_modules/@wm-storefront/commerce-ui/dist";
 ```
 
 ## License

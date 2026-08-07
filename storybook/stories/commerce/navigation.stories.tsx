@@ -4,7 +4,7 @@
 import { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { INITIAL_VIEWPORTS } from "storybook/viewport";
-import { getFacets, type FilterValue } from "@gucco/commerce-core";
+import { getFacets, type FilterValue } from "@wm-storefront/commerce-core";
 import {
   Breadcrumbs,
   FilterDrawer,
@@ -14,7 +14,7 @@ import {
   ResultRange,
   SearchDialog,
   SearchTrigger,
-} from "@gucco/commerce-ui";
+} from "@wm-storefront/commerce-ui";
 import { baseConfig, colourSwatches } from "../../src/decorator";
 import { CATEGORIES, COLLECTIONS, PRODUCTS, REGION } from "../../src/fixture";
 

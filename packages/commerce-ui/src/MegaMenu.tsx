@@ -2,10 +2,10 @@ import { Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { ArrowRight } from "lucide-react";
 import { useState } from "react";
-import type { Category, Collection, Product } from "@gucco/commerce-core";
+import type { Category, Collection, Product } from "@wm-storefront/commerce-core";
 import { useStorefront } from "./StorefrontProvider";
 import { useRegion } from "./RegionProvider";
-import { minVariantPrice } from "@gucco/commerce-core";
+import { minVariantPrice } from "@wm-storefront/commerce-core";
 import { useOverflowCount } from "./use-overflow-count";
 import {
   NavigationMenu,
@@ -14,8 +14,8 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from "@gucco/ui/navigation-menu";
-import { cn } from "@gucco/ui/utils";
+} from "@wm-storefront/ui/navigation-menu";
+import { cn } from "@wm-storefront/ui/utils";
 import { Price } from "./Price";
 import { StoreImage } from "./StoreImage";
 

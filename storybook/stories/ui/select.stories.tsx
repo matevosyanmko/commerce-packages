@@ -12,7 +12,7 @@ import {
   SelectSeparator,
   SelectTrigger,
   SelectValue,
-} from "@gucco/ui/select";
+} from "@wm-storefront/ui/select";
 
 const meta: Meta = {
   title: "ui/Select",

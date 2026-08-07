@@ -6,9 +6,9 @@ import {
   SheetFooter,
   SheetHeader,
   SheetTitle,
-} from "@gucco/ui/sheet";
-import { Button } from "@gucco/ui/button";
-import { Separator } from "@gucco/ui/separator";
+} from "@wm-storefront/ui/sheet";
+import { Button } from "@wm-storefront/ui/button";
+import { Separator } from "@wm-storefront/ui/separator";
 import { useCart } from "./CartProvider";
 import { useStorefront } from "./StorefrontProvider";
 import { Price } from "./Price";

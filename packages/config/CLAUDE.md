@@ -1,11 +1,11 @@
-# @gucco/config
+# @wm-storefront/config
 
 Shared tooling. **No build step, no runtime code** — three files consumed by subpath.
 
 ```
-css/theme.css        @import "@gucco/config/theme.css"
-tsconfig.base.json   "extends": "@gucco/config/tsconfig.base.json"
-prettier.json        "prettier": "@gucco/config/prettier"   (in package.json)
+css/theme.css        @import "@wm-storefront/config/theme.css"
+tsconfig.base.json   "extends": "@wm-storefront/config/tsconfig.base.json"
+prettier.json        "prettier": "@wm-storefront/config/prettier"   (in package.json)
 ```
 
 ## `theme.css` is a contract, not a theme
@@ -51,6 +51,6 @@ Tailwind runs with `source(none)`, so a store must also scan the package dists o
 used only inside package components are silently dropped:
 
 ```css
-@source "../node_modules/@gucco/ui/dist";
-@source "../node_modules/@gucco/commerce-ui/dist";
+@source "../node_modules/@wm-storefront/ui/dist";
+@source "../node_modules/@wm-storefront/commerce-ui/dist";
 ```

@@ -17,7 +17,7 @@ import {
   useRouterState,
 } from "@tanstack/react-router";
 import { Toaster } from "sonner";
-import { createCommerceApi } from "@gucco/commerce-core";
+import { createCommerceApi } from "@wm-storefront/commerce-core";
 import {
   AuthProvider,
   CartProvider,
@@ -26,7 +26,7 @@ import {
   RegionProvider,
   StorefrontProvider,
   type StorefrontConfig,
-} from "@gucco/commerce-ui";
+} from "@wm-storefront/commerce-ui";
 import { DATA, REGION } from "./fixture";
 
 /* ── Imagery ────────────────────────────────────────────────────────────────── */

@@ -22,7 +22,7 @@ import {
   SidebarProvider,
   SidebarSeparator,
   SidebarTrigger,
-} from "@gucco/ui/sidebar";
+} from "@wm-storefront/ui/sidebar";
 
 const meta: Meta = {
   title: "ui/Sidebar",
