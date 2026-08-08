@@ -42,7 +42,7 @@ implementation of that same contract.
 | `pricing` | `variantPrice`, `minVariantPrice`, `productPrice`, `inStock`, `stockQuantity` |
 | `filters` | the zod search-param schema shared by product listing pages |
 | `medusa-map` | Medusa → neutral mapping, plus category tree helpers |
-| `money` | `formatMoney`, `discountPercent` |
+| `money` | `formatMoney`, `formatMoneyRange`, `discountPercent` |
 | `countries` | country/region lookup helpers |
 | `analytics` | `track` — a no-op-safe event seam stores can wire to their own analytics |
 | `homepage-types` | shapes for admin-composed homepage sections |

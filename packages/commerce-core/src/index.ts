@@ -29,7 +29,7 @@ export * from "./medusa-map";
 export * from "./filters";
 
 // Money formatting.
-export { formatMoney, discountPercent } from "./money";
+export { formatMoney, formatMoneyRange, discountPercent } from "./money";
 
 // Country list helpers for region <Select>s.
 export * from "./countries";
