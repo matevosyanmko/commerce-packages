@@ -1,5 +1,11 @@
 # @gucco/commerce-core
 
+## 0.1.2
+
+### Patch Changes
+
+- [#25](https://github.com/matevosyanmko/commerce-packages/pull/25) [`e7b4eec`](https://github.com/matevosyanmko/commerce-packages/commit/e7b4eecf3d1feae0ee1004b17594a8dfd1a4432c) Thanks [@matevosyanmko](https://github.com/matevosyanmko)! - Add the missing `medusa-map` row to the module table in the README.
+
 ## 0.1.1
 
 ### Patch Changes

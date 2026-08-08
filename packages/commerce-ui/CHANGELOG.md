@@ -1,5 +1,14 @@
 # @gucco/commerce-ui
 
+## 0.1.1
+
+### Patch Changes
+
+- [#25](https://github.com/matevosyanmko/commerce-packages/pull/25) [`e7b4eec`](https://github.com/matevosyanmko/commerce-packages/commit/e7b4eecf3d1feae0ee1004b17594a8dfd1a4432c) Thanks [@matevosyanmko](https://github.com/matevosyanmko)! - Spell out the actual minimum peer dependency versions in the README instead of listing
+  bare package names.
+- Updated dependencies [[`e7b4eec`](https://github.com/matevosyanmko/commerce-packages/commit/e7b4eecf3d1feae0ee1004b17594a8dfd1a4432c)]:
+  - @wm-storefront/commerce-core@0.1.2
+
 ## 0.1.0
 
 ### Major Changes
