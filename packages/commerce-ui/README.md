@@ -12,8 +12,8 @@ Part of [commerce-packages](https://github.com/matevosyanmko/commerce-packages).
 bun add @wm-storefront/commerce-ui
 ```
 
-Peer dependencies you must provide: `react`, `react-dom` (>=19), `@tanstack/react-query`,
-`@tanstack/react-router`, `sonner`, `lucide-react`. These are peers rather than dependencies
+Peer dependencies you must provide: `react`, `react-dom` (>=19), `@tanstack/react-query` (>=5),
+`@tanstack/react-router` (>=1.170), `sonner` (>=2), `lucide-react` (>=0.500). These are peers rather than dependencies
 on purpose — two copies of the router means no route context, and two copies of sonner means
 toasts silently vanish. ESM only.
 
