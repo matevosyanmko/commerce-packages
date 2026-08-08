@@ -1,6 +1,6 @@
 {
   "name": "@wm-storefront/commerce-core",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "Backend-neutral commerce seam (catalog, cart, orders, customer) shared across storefronts. Zero brand data — catalog and store config are injected.",
   "keywords": [
     "commerce",
