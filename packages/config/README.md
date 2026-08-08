@@ -40,6 +40,17 @@ file header. Miss one and the corresponding utility silently produces nothing.
 
 Utility names are part of the contract: renaming one breaks every consuming store.
 
+## Reminder for stores
+
+Tailwind runs with `source(none)`, so a store must also scan the package dists or classes
+used only inside `@wm-storefront/ui` / `@wm-storefront/commerce-ui` components are silently
+dropped:
+
+```css
+@source "../node_modules/@wm-storefront/ui/dist";
+@source "../node_modules/@wm-storefront/commerce-ui/dist";
+```
+
 ## License
 
 MIT © Mko Matevosyan
