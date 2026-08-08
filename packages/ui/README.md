@@ -25,6 +25,15 @@ import { Button } from "@wm-storefront/ui/button";
 <Button variant="outline" size="sm">Add to cart</Button>;
 ```
 
+`cn()`, the `clsx` + `tailwind-merge` class helper every component here uses internally, is
+also exported for consumers:
+
+```tsx
+import { cn } from "@wm-storefront/ui/utils";
+
+<div className={cn("flex gap-2", isActive && "bg-accent")} />;
+```
+
 ## Theming
 
 Components style through **semantic CSS variables only** (`bg-background`, `text-foreground`,
