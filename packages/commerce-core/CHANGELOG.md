@@ -1,5 +1,12 @@
 # @gucco/commerce-core
 
+## 0.2.0
+
+### Minor Changes
+
+- [#29](https://github.com/matevosyanmko/commerce-packages/pull/29) [`03a468c`](https://github.com/matevosyanmko/commerce-packages/commit/03a468c2a9884f125efbd555dc4fbc21410bce2e) Thanks [@matevosyanmko](https://github.com/matevosyanmko)! - Add `formatMoneyRange(min, max, currency?, locale?)` for rendering variant price ranges
+  (e.g. "€19 – €49"), a common need with no existing helper in this module.
+
 ## 0.1.3
 
 ### Patch Changes

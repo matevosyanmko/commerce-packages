@@ -1,5 +1,12 @@
 # @gucco/commerce-ui
 
+## 0.1.2
+
+### Patch Changes
+
+- Updated dependencies [[`03a468c`](https://github.com/matevosyanmko/commerce-packages/commit/03a468c2a9884f125efbd555dc4fbc21410bce2e)]:
+  - @wm-storefront/commerce-core@0.2.0
+
 ## 0.1.1
 
 ### Patch Changes
