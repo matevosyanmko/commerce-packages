@@ -23,6 +23,16 @@ export function formatMoney(
   }).format(amount);
 }
 
+export function formatMoneyRange(
+  min: number,
+  max: number,
+  currency: string = FALLBACK_CURRENCY,
+  locale = "en-US",
+): string {
+  if (min === max) return formatMoney(min, currency, locale);
+  return `${formatMoney(min, currency, locale)} – ${formatMoney(max, currency, locale)}`;
+}
+
 export function discountPercent(price: number, compareAt?: number): number | null {
   if (!compareAt || compareAt <= price) return null;
   return Math.round(((compareAt - price) / compareAt) * 100);
