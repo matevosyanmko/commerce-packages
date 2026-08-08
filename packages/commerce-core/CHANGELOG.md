@@ -1,5 +1,14 @@
 # @gucco/commerce-core
 
+## 0.1.0
+
+### Major Changes
+
+- [#19](https://github.com/matevosyanmko/commerce-packages/pull/19) [`d0a40d4`](https://github.com/matevosyanmko/commerce-packages/commit/d0a40d444bfabb58d907b0777a938d694e35c0ed) Thanks [@matevosyanmko](https://github.com/matevosyanmko)! - Renamed from `@gucco/commerce-core`. Published under a new npm scope — the old
+  `@gucco/*` packages are unpublished and will be deprecated once consumers move over.
+  Any store depending on `@gucco/commerce-core` must switch its dependency and imports
+  to `@wm-storefront/commerce-core`.
+
 ## 0.2.2
 
 ### Patch Changes

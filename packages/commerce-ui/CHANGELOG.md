@@ -1,5 +1,22 @@
 # @gucco/commerce-ui
 
+## 0.1.0
+
+### Major Changes
+
+- [#19](https://github.com/matevosyanmko/commerce-packages/pull/19) [`d0a40d4`](https://github.com/matevosyanmko/commerce-packages/commit/d0a40d444bfabb58d907b0777a938d694e35c0ed) Thanks [@matevosyanmko](https://github.com/matevosyanmko)! - Renamed from `@gucco/commerce-ui`, and its dependencies on `@gucco/commerce-core` /
+  `@gucco/ui` repointed to `@wm-storefront/commerce-core` / `@wm-storefront/ui`.
+  Published under a new npm scope — the old `@gucco/*` packages are unpublished and
+  will be deprecated once consumers move over. Any store depending on
+  `@gucco/commerce-ui` must switch its dependency and imports to
+  `@wm-storefront/commerce-ui`.
+
+### Patch Changes
+
+- Updated dependencies [[`d0a40d4`](https://github.com/matevosyanmko/commerce-packages/commit/d0a40d444bfabb58d907b0777a938d694e35c0ed), [`d0a40d4`](https://github.com/matevosyanmko/commerce-packages/commit/d0a40d444bfabb58d907b0777a938d694e35c0ed)]:
+  - @wm-storefront/commerce-core@1.0.0
+  - @wm-storefront/ui@1.0.0
+
 ## 0.2.2
 
 ### Patch Changes
