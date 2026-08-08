@@ -21,7 +21,7 @@
     "url": "https://github.com/matevosyanmko/commerce-packages/issues"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "restricted"
   },
   "type": "module",
   "main": "./dist/index.js",

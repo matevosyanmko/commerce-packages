@@ -11,7 +11,7 @@ Part of [commerce-packages](https://github.com/matevosyanmko/commerce-packages).
 bun add @wm-storefront/commerce-core
 ```
 
-ESM only. Requires Node 20+.
+ESM only. Requires Node 20+. Targets Medusa v2 (`@medusajs/js-sdk` / `@medusajs/types` ^2.17).
 
 ## The idea
 

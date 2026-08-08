@@ -67,6 +67,11 @@ A few wrap something other than Radix: `carousel` → embla, `chart` → rechart
 vaul, `command` → cmdk, `calendar` → react-day-picker, `form` → react-hook-form,
 `resizable` → react-resizable-panels, `input-otp` → input-otp, `sonner` → sonner.
 
+## TypeScript
+
+Every component exports its own prop-type interface (e.g. `ButtonProps`) for consumers who
+need to extend or wrap one.
+
 ## Note on `sideEffects`
 
 This package declares `"sideEffects": false`, which is accurate today — no module imports CSS
