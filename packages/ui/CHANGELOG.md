@@ -1,5 +1,12 @@
 # @gucco/ui
 
+## 0.1.1
+
+### Patch Changes
+
+- [#21](https://github.com/matevosyanmko/commerce-packages/pull/21) [`ff00445`](https://github.com/matevosyanmko/commerce-packages/commit/ff0044515acc553660072e9aca2df999045daf52) Thanks [@matevosyanmko](https://github.com/matevosyanmko)! - Document the `cn()` export in the README — it was demonstrated nowhere despite being
+  one of the package's two non-component exports.
+
 ## 0.1.0
 
 ### Major Changes
