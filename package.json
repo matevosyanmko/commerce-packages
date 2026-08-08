@@ -14,9 +14,9 @@
     "storybook"
   ],
   "scripts": {
-    "build": "bun run --filter '@gucco/*' build",
-    "typecheck": "bun run --filter '@gucco/*' typecheck",
-    "pack:check": "bun run --filter '@gucco/*' pack:check",
+    "build": "bun run --filter '@wm-storefront/*' build",
+    "typecheck": "bun run --filter '@wm-storefront/*' typecheck",
+    "pack:check": "bun run --filter '@wm-storefront/*' pack:check",
     "smoke": "bun run --cwd playground smoke",
     "storybook": "bun run --cwd storybook dev",
     "changeset": "changeset",

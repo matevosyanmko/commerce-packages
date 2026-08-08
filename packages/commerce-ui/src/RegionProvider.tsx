@@ -5,7 +5,7 @@
 // render, before the real regions arrive.
 
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
-import { localeForCurrency, type Region } from "@gucco/commerce-core";
+import { localeForCurrency, type Region } from "@wm-storefront/commerce-core";
 import { useStorefront } from "./StorefrontProvider";
 
 interface RegionContextValue {

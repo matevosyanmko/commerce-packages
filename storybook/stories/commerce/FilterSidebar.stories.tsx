@@ -8,8 +8,8 @@
 
 import { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { getFacets, type FilterValue } from "@gucco/commerce-core";
-import { FilterSidebar } from "@gucco/commerce-ui";
+import { getFacets, type FilterValue } from "@wm-storefront/commerce-core";
+import { FilterSidebar } from "@wm-storefront/commerce-ui";
 import { baseConfig, colourSwatches } from "../../src/decorator";
 import { CATEGORIES, COLLECTIONS, PRODUCTS, REGION } from "../../src/fixture";
 

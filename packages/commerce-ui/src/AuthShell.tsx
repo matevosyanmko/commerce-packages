@@ -1,5 +1,5 @@
 import { cloneElement, isValidElement, type ReactElement, type ReactNode } from "react";
-import { Label } from "@gucco/ui/label";
+import { Label } from "@wm-storefront/ui/label";
 
 // Shared centered card used by the sign-in and register pages, so the two
 // screens stay visually consistent.

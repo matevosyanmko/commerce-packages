@@ -8,7 +8,7 @@
  */
 
 @import "tailwindcss" source(none);
-@import "@gucco/config/theme.css";
+@import "@wm-storefront/config/theme.css";
 
 /* Tailwind's `source(none)` means classes are only generated from what's listed
  * here. These point at SRC (not dist) to match the vite aliases in main.ts —

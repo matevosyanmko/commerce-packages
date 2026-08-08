@@ -1,8 +1,8 @@
-# @gucco/ui
+# @wm-storefront/ui
 
 Brand-agnostic Radix primitives — 46 vendored wrappers, plus `cn()` (`utils.ts`) and the
 `use-mobile` hook. **This package knows nothing about commerce.** No products, no cart, no
-`@gucco/commerce-core` import — if you need one, you're in the wrong package.
+`@wm-storefront/commerce-core` import — if you need one, you're in the wrong package.
 
 ## Rules
 
@@ -19,7 +19,7 @@ Brand-agnostic Radix primitives — 46 vendored wrappers, plus `cn()` (`utils.ts
   match these files. Hand-write the wrapper instead.
 - **Style through tokens only.** Semantic CSS variables (`bg-background`, `text-foreground`,
   `border-border`) — never a literal colour. The variables are defined by the *store*, via
-  `@gucco/config/theme.css`.
+  `@wm-storefront/config/theme.css`.
 - **Never override Radix's positioning, focus management or `data-state` behaviour.**
 
 ## Adding a wrapper
@@ -31,7 +31,7 @@ Brand-agnostic Radix primitives — 46 vendored wrappers, plus `cn()` (`utils.ts
 3. Add `export * from "./<name>";` to `src/index.ts`.
 4. `bun run build` — stores resolve `dist`, not `src`.
 
-Subpath exports are generated automatically (`@gucco/ui/<name>`), so no config change
+Subpath exports are generated automatically (`@wm-storefront/ui/<name>`), so no config change
 is needed. Stores import from here directly; **they do not re-export our components**, so an
 export you don't add to the barrel is effectively invisible.
 

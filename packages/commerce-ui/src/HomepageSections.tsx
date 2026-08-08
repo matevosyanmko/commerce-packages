@@ -6,14 +6,14 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@gucco/ui/accordion";
-import { Button } from "@gucco/ui/button";
+} from "@wm-storefront/ui/accordion";
+import { Button } from "@wm-storefront/ui/button";
 import { HeroCarousel } from "./HeroCarousel";
 import { ProductCard } from "./ProductCard";
 import { ShopByRoom } from "./ShopByRoom";
 import { StoreImage } from "./StoreImage";
-import { cn } from "@gucco/ui/utils";
-import type { HomepageSection } from "@gucco/commerce-core";
+import { cn } from "@wm-storefront/ui/utils";
+import type { HomepageSection } from "@wm-storefront/commerce-core";
 import { useStorefront } from "./StorefrontProvider";
 
 /**

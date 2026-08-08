@@ -3,7 +3,7 @@
 // wired correctly, this renders with no console noise.
 
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { ProductCard } from "@gucco/commerce-ui";
+import { ProductCard } from "@wm-storefront/commerce-ui";
 import { PRODUCTS } from "../../src/fixture";
 
 const meta = {

@@ -9,12 +9,12 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "@gucco/ui/command";
-import { Dialog, DialogContent, DialogTitle } from "@gucco/ui/dialog";
+} from "@wm-storefront/ui/command";
+import { Dialog, DialogContent, DialogTitle } from "@wm-storefront/ui/dialog";
 import { useDebouncedValue } from "./use-debounced-value";
 import { useStorefront } from "./StorefrontProvider";
 import { useRegion } from "./RegionProvider";
-import { minVariantPrice } from "@gucco/commerce-core";
+import { minVariantPrice } from "@wm-storefront/commerce-core";
 import { Price } from "./Price";
 import { StoreImage } from "./StoreImage";
 

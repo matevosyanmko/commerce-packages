@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Minus, Plus, X } from "lucide-react";
-import type { CartLineItem } from "@gucco/commerce-core";
+import type { CartLineItem } from "@wm-storefront/commerce-core";
 import { useCart } from "./CartProvider";
 import { Price } from "./Price";
 import { StoreImage } from "./StoreImage";

@@ -1,4 +1,4 @@
-# @gucco/commerce-core
+# @wm-storefront/commerce-core
 
 The backend-neutral data seam behind a family of Medusa storefronts. Types, an api factory,
 pricing, filters, catalog helpers and money formatting — **no JSX, no React, no brand data**.
@@ -8,7 +8,7 @@ Part of [commerce-packages](https://github.com/matevosyanmko/commerce-packages).
 ## Install
 
 ```bash
-bun add @gucco/commerce-core
+bun add @wm-storefront/commerce-core
 ```
 
 ESM only. Requires Node 20+.
@@ -19,7 +19,7 @@ Anything that differs per store — catalog data, currency, region defaults — 
 never imported. You hand `createCommerceApi` a config and get the api surface back:
 
 ```ts
-import { createCommerceApi } from "@gucco/commerce-core";
+import { createCommerceApi } from "@wm-storefront/commerce-core";
 
 const api = createCommerceApi({
   /* store config: catalog source, region defaults, currency */
@@ -52,7 +52,7 @@ directly.
 Every module is reachable directly, which is cheaper for tree-shaking:
 
 ```ts
-import { formatMoney } from "@gucco/commerce-core/money";
+import { formatMoney } from "@wm-storefront/commerce-core/money";
 ```
 
 ## License

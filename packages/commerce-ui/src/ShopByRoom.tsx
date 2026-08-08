@@ -1,4 +1,4 @@
-import type { HomepageTile } from "@gucco/commerce-core";
+import type { HomepageTile } from "@wm-storefront/commerce-core";
 import { StoreImage } from "./StoreImage";
 
 /**

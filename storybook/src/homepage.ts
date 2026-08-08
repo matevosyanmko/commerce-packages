@@ -12,7 +12,7 @@ import type {
   HomepageTestimonial,
   HomepageTile,
   HomepageValue,
-} from "@gucco/commerce-core";
+} from "@wm-storefront/commerce-core";
 import { PRODUCTS } from "./fixture";
 
 export const SLIDES: HeroSlide[] = [

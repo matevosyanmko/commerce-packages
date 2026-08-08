@@ -5,11 +5,11 @@
 // at the root with its own config and its `createCommerceApi` instance; package
 // components read them via `useStorefront()`.
 //
-// This is what keeps @gucco/commerce-ui brand-agnostic: no storage prefix, no
+// This is what keeps @wm-storefront/commerce-ui brand-agnostic: no storage prefix, no
 // image scheme, no site name lives in the components — they come through this context.
 
 import { createContext, useContext, useMemo, type ComponentType, type ReactNode } from "react";
-import type { CommerceApi } from "@gucco/commerce-core";
+import type { CommerceApi } from "@wm-storefront/commerce-core";
 import type { StorefrontQueries } from "./queries";
 
 /** One colour swatch for the tag facet. `swatch` is any CSS background value —

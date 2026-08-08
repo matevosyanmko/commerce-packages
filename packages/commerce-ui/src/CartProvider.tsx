@@ -16,7 +16,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { track, type Cart } from "@gucco/commerce-core";
+import { track, type Cart } from "@wm-storefront/commerce-core";
 import { useStorefront } from "./StorefrontProvider";
 import { useRegion } from "./RegionProvider";
 

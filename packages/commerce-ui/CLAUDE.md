@@ -1,4 +1,4 @@
-# @gucco/commerce-ui
+# @wm-storefront/commerce-ui
 
 Shared commerce components and the four providers. This is where brand pressure is
 highest — every component here is one careless string away from being flower-shaped.

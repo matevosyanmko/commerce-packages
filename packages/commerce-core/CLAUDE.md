@@ -1,4 +1,4 @@
-# @gucco/commerce-core
+# @wm-storefront/commerce-core
 
 The backend-neutral data seam. **No JSX, no React, no brand data.** If you're adding
 something that renders, it belongs in `commerce-ui` instead.

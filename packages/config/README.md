@@ -1,4 +1,4 @@
-# @gucco/config
+# @wm-storefront/config
 
 Shared tooling for the storefronts: a Tailwind theme contract, a TypeScript base config and a
 Prettier config. **No build step, no runtime code** — three files consumed by subpath.
@@ -8,24 +8,24 @@ Part of [commerce-packages](https://github.com/matevosyanmko/commerce-packages).
 ## Install
 
 ```bash
-bun add -d @gucco/config
+bun add -d @wm-storefront/config
 ```
 
 ## Usage
 
 ```css
 /* styles.css */
-@import "@gucco/config/theme.css";
+@import "@wm-storefront/config/theme.css";
 ```
 
 ```jsonc
 // tsconfig.json
-{ "extends": "@gucco/config/tsconfig.base.json" }
+{ "extends": "@wm-storefront/config/tsconfig.base.json" }
 ```
 
 ```jsonc
 // package.json
-{ "prettier": "@gucco/config/prettier" }
+{ "prettier": "@wm-storefront/config/prettier" }
 ```
 
 ## `theme.css` is a contract, not a theme

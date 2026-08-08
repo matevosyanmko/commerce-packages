@@ -1,4 +1,4 @@
-# @gucco/ui
+# @wm-storefront/ui
 
 46 brand-agnostic [Radix UI](https://www.radix-ui.com/) primitive wrappers, plus `cn()` and a
 `use-mobile` hook. **This package knows nothing about commerce** — no products, no cart.
@@ -8,7 +8,7 @@ Part of [commerce-packages](https://github.com/matevosyanmko/commerce-packages).
 ## Install
 
 ```bash
-bun add @gucco/ui react react-dom
+bun add @wm-storefront/ui react react-dom
 ```
 
 `react` and `react-dom` (>=19) are peer dependencies. Everything else — Radix, `cva`, `clsx`,
@@ -18,9 +18,9 @@ them yourself. ESM only.
 ## Usage
 
 ```tsx
-import { Button } from "@gucco/ui";
+import { Button } from "@wm-storefront/ui";
 // or, cheaper to tree-shake:
-import { Button } from "@gucco/ui/button";
+import { Button } from "@wm-storefront/ui/button";
 
 <Button variant="outline" size="sm">Add to cart</Button>;
 ```
@@ -29,10 +29,10 @@ import { Button } from "@gucco/ui/button";
 
 Components style through **semantic CSS variables only** (`bg-background`, `text-foreground`,
 `border-border`) — never a literal colour. The variables themselves are yours to define. The
-token contract lives in [`@gucco/config`](https://www.npmjs.com/package/@gucco/config):
+token contract lives in [`@wm-storefront/config`](https://www.npmjs.com/package/@wm-storefront/config):
 
 ```css
-@import "@gucco/config/theme.css";
+@import "@wm-storefront/config/theme.css";
 ```
 
 Because these components live in `node_modules`, Tailwind won't see their classes unless you
@@ -40,7 +40,7 @@ point it at them:
 
 ```css
 @import "tailwindcss" source(none);
-@source "../node_modules/@gucco/ui/dist";
+@source "../node_modules/@wm-storefront/ui/dist";
 ```
 
 Skip that and the classes silently never get generated.

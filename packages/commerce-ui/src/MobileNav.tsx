@@ -1,12 +1,12 @@
 import { Link } from "@tanstack/react-router";
 import { Menu } from "lucide-react";
-import type { Category, Collection } from "@gucco/commerce-core";
+import type { Category, Collection } from "@wm-storefront/commerce-core";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@gucco/ui/accordion";
+} from "@wm-storefront/ui/accordion";
 import {
   Sheet,
   SheetClose,
@@ -14,7 +14,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@gucco/ui/sheet";
+} from "@wm-storefront/ui/sheet";
 import { useStorefront } from "./StorefrontProvider";
 
 /**

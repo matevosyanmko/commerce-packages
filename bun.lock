@@ -13,8 +13,8 @@
       },
     },
     "packages/commerce-core": {
-      "name": "@gucco/commerce-core",
-      "version": "0.2.0",
+      "name": "@wm-storefront/commerce-core",
+      "version": "0.2.2",
       "dependencies": {
         "@medusajs/js-sdk": "^2.17.2",
         "@medusajs/types": "^2.17.2",
@@ -26,11 +26,11 @@
       },
     },
     "packages/commerce-ui": {
-      "name": "@gucco/commerce-ui",
-      "version": "0.2.0",
+      "name": "@wm-storefront/commerce-ui",
+      "version": "0.2.2",
       "dependencies": {
-        "@gucco/commerce-core": "^0.1.0",
-        "@gucco/ui": "^0.1.0",
+        "@wm-storefront/commerce-core": "^0.2.2",
+        "@wm-storefront/ui": "^0.2.1",
       },
       "devDependencies": {
         "@tanstack/react-query": "^5.101.1",
@@ -51,12 +51,12 @@
       },
     },
     "packages/config": {
-      "name": "@gucco/config",
-      "version": "0.2.0",
+      "name": "@wm-storefront/config",
+      "version": "0.2.1",
     },
     "packages/ui": {
-      "name": "@gucco/ui",
-      "version": "0.2.0",
+      "name": "@wm-storefront/ui",
+      "version": "0.2.1",
       "dependencies": {
         "@radix-ui/react-accordion": "^1.2.12",
         "@radix-ui/react-alert-dialog": "^1.1.15",
@@ -113,16 +113,16 @@
     "playground": {
       "name": "playground",
       "dependencies": {
-        "@gucco/commerce-core": "workspace:*",
+        "@wm-storefront/commerce-core": "workspace:*",
       },
     },
     "storybook": {
       "name": "storybook-harness",
       "dependencies": {
-        "@gucco/commerce-core": "workspace:*",
-        "@gucco/commerce-ui": "workspace:*",
-        "@gucco/config": "workspace:*",
-        "@gucco/ui": "workspace:*",
+        "@wm-storefront/commerce-core": "workspace:*",
+        "@wm-storefront/commerce-ui": "workspace:*",
+        "@wm-storefront/config": "workspace:*",
+        "@wm-storefront/ui": "workspace:*",
       },
       "devDependencies": {
         "@storybook/addon-docs": "^9.1.10",
@@ -292,14 +292,6 @@
     "@floating-ui/react-dom": ["@floating-ui/react-dom@2.1.9", "", { "dependencies": { "@floating-ui/dom": "^1.8.0" }, "peerDependencies": { "react": ">=16.8.0", "react-dom": ">=16.8.0" } }, "sha512-JDjEFGCpImxDCA7JJKviA0M9+RtmJdj0m/NVU5IMgBK+AmZouAQQ7/+2GLH0GXXY0YMw9oXPB8hKdbPYg5QLYg=="],
 
     "@floating-ui/utils": ["@floating-ui/utils@0.2.12", "", {}, "sha512-HpCo8tmWzLVad5s2d19EhAz5zqrrQ6s69qd6moPMQvkOuSwDT1YgRfWSVuc4ennqrgv3OHppiOGMQ7oC13yIww=="],
-
-    "@gucco/commerce-core": ["@gucco/commerce-core@workspace:packages/commerce-core"],
-
-    "@gucco/commerce-ui": ["@gucco/commerce-ui@workspace:packages/commerce-ui"],
-
-    "@gucco/config": ["@gucco/config@workspace:packages/config"],
-
-    "@gucco/ui": ["@gucco/ui@workspace:packages/ui"],
 
     "@inquirer/external-editor": ["@inquirer/external-editor@1.0.3", "", { "dependencies": { "chardet": "^2.1.1", "iconv-lite": "^0.7.0" }, "peerDependencies": { "@types/node": ">=18" }, "optionalPeers": ["@types/node"] }, "sha512-RWbSrDiYmO4LbejWY7ttpxczuwQyZLBUyygsA9Nsv95hpzUWwnNTVQmAq3xuh7vNwCp07UTmE5i11XAEExx4RA=="],
 
@@ -624,6 +616,14 @@
     "@vitest/spy": ["@vitest/spy@3.2.4", "", { "dependencies": { "tinyspy": "^4.0.3" } }, "sha512-vAfasCOe6AIK70iP5UD11Ac4siNUNJ9i/9PZ3NKx07sG6sUxeag1LWdNrMWeKKYBLlzuK+Gn65Yd5nyL6ds+nw=="],
 
     "@vitest/utils": ["@vitest/utils@3.2.4", "", { "dependencies": { "@vitest/pretty-format": "3.2.4", "loupe": "^3.1.4", "tinyrainbow": "^2.0.0" } }, "sha512-fB2V0JFrQSMsCo9HiSq3Ezpdv4iYaXRG1Sx8edX3MwxfyNn83mKiGzOcH+Fkxt4MHxr3y42fQi1oeAInqgX2QA=="],
+
+    "@wm-storefront/commerce-core": ["@wm-storefront/commerce-core@workspace:packages/commerce-core"],
+
+    "@wm-storefront/commerce-ui": ["@wm-storefront/commerce-ui@workspace:packages/commerce-ui"],
+
+    "@wm-storefront/config": ["@wm-storefront/config@workspace:packages/config"],
+
+    "@wm-storefront/ui": ["@wm-storefront/ui@workspace:packages/ui"],
 
     "acorn": ["acorn@8.18.0", "", { "bin": { "acorn": "bin/acorn" } }, "sha512-lGq+9yr1/GuAWaVYIHRjvvySG5/4VfKIvC8EWxStPdcDh/Ka7FG3twP6v4d5BkravUilhIAsG4Qj83t02LWUPQ=="],
 

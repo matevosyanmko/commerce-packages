@@ -6,7 +6,7 @@
 // api, so this is where a broken QueryClient in the decorator would show.
 
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Navbar, type WordmarkProps } from "@gucco/commerce-ui";
+import { Navbar, type WordmarkProps } from "@wm-storefront/commerce-ui";
 import { baseConfig } from "../../src/decorator";
 
 /** Stand-in for a store's logo lockup — geometric, not any real brand's mark. */

@@ -2,7 +2,7 @@
 // the cva variants are both working.
 
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Button } from "@gucco/ui/button";
+import { Button } from "@wm-storefront/ui/button";
 
 const meta = {
   title: "ui/Button",
