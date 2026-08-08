@@ -1,5 +1,11 @@
 # @gucco/ui
 
+## 0.1.2
+
+### Patch Changes
+
+- [#27](https://github.com/matevosyanmko/commerce-packages/pull/27) [`49b57d2`](https://github.com/matevosyanmko/commerce-packages/commit/49b57d2efaf3ca1435050f56f1975c7bf5483423) Thanks [@matevosyanmko](https://github.com/matevosyanmko)! - Document that every component exports its own prop-type interface.
+
 ## 0.1.1
 
 ### Patch Changes
