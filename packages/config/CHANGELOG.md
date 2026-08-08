@@ -1,5 +1,12 @@
 # @gucco/config
 
+## 0.1.1
+
+### Patch Changes
+
+- [#23](https://github.com/matevosyanmko/commerce-packages/pull/23) [`9ccb340`](https://github.com/matevosyanmko/commerce-packages/commit/9ccb3407b55220ab6eac1d51c1b07081630e4b3a) Thanks [@matevosyanmko](https://github.com/matevosyanmko)! - Surface the "stores must `@source` the package dists" reminder in the public README —
+  it previously only existed in the package's internal CLAUDE.md.
+
 ## 0.1.0
 
 ### Major Changes
